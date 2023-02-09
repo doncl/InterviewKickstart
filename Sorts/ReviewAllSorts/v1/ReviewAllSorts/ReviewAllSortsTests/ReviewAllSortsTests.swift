@@ -40,9 +40,9 @@ final class ReviewAllSortsTests: XCTestCase {
     sortTestHelper(sort: quickSortHoare)
   }
   
-//  func testHeapSort() {
-//    sortTestHelper(sort: heapSort)
-//  }
+  func testHeapSort() {
+    sortTestHelper(sort: heapSort)
+  }
   
   private func sortTestHelper(sort: (_ numbers: inout [Int]) -> ()) {
         

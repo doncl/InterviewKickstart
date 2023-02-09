@@ -150,5 +150,61 @@ func quickSortHoare(numbers: inout [Int]) {
 }
 
 func heapSort(numbers: inout [Int]) {
+  func leftChildIndex(ofParentAt index: Int) -> Int {
+    2 * index + 1
+  }
   
+  func rightChildIndex(ofParentAt index: Int) -> Int {
+    2 * index + 2
+  }
+  
+  func siftDown(from index: Int, upTo size: Int) {
+    var parentIndex = index
+    
+    while true {
+      // index for left and right child
+      let leftChildIndex = leftChildIndex(ofParentAt: parentIndex)
+      let rightChildIndex = rightChildIndex(ofParentAt: parentIndex)
+      
+      // set temp var to parent
+      var candidateIndex = parentIndex
+      
+      // We check children to see if they're bigger, we only check left and right
+      // once each per iteration, if left is bigger, candidate becomes left, and
+      // we'll then check the right child of the candidate.  This works because on
+      // the next iteration we'll check the leftIndex of the candidate.
+      
+      // check and see if the left child is bigger
+      if leftChildIndex < size && numbers[leftChildIndex] > numbers[candidateIndex] {
+        candidateIndex = leftChildIndex
+      }
+      
+      // now check the right child of whatever we're pointing at now.
+      if rightChildIndex < size && numbers[rightChildIndex] > numbers[candidateIndex] {
+        candidateIndex = rightChildIndex
+      }
+      
+      // If we didn't move at all, after that, then the heap constraint holds true, we're done.
+      if candidateIndex == parentIndex {
+        return
+      }
+      
+      // swap the candidate with the parent, so the parent is now in its bubble-down place
+      numbers.swapAt(parentIndex, candidateIndex)
+      
+      // now start at the candidate (where the parent was swapped to), and keep looking).
+      parentIndex = candidateIndex
+    }
+  }
+  
+  if !numbers.isEmpty {
+    for i in stride(from: numbers.count / 2 - 1, through: 0, by: -1) {
+      siftDown(from: i, upTo: numbers.count)
+    }
+    
+    for index in numbers.indices.reversed() {
+      numbers.swapAt(0, index)
+      siftDown(from: 0, upTo: index)
+    }
+  }
 }
