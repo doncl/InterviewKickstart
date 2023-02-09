@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47062EE12993334300C6F985 /* QuickSortLomutoV6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47062EE02993334300C6F985 /* QuickSortLomutoV6.swift */; };
+		47062EEE2993336C00C6F985 /* QuickSortLomutoV6Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47062EED2993336C00C6F985 /* QuickSortLomutoV6Tests.swift */; };
+		47062EEF2993336C00C6F985 /* libQuickSortLomutoV6.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47062EDD2993334300C6F985 /* libQuickSortLomutoV6.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47062EF02993336C00C6F985 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47062ED52993334300C6F985 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47062EDC2993334300C6F985;
+			remoteInfo = QuickSortLomutoV6;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47062EDB2993334300C6F985 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		47062EDD2993334300C6F985 /* libQuickSortLomutoV6.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libQuickSortLomutoV6.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47062EE02993334300C6F985 /* QuickSortLomutoV6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortLomutoV6.swift; sourceTree = "<group>"; };
+		47062EEB2993336C00C6F985 /* QuickSortLomutoV6Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuickSortLomutoV6Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47062EED2993336C00C6F985 /* QuickSortLomutoV6Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSortLomutoV6Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47062EDA2993334300C6F985 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47062EE82993336C00C6F985 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47062EEF2993336C00C6F985 /* libQuickSortLomutoV6.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47062ED42993334300C6F985 = {
+			isa = PBXGroup;
+			children = (
+				47062EDF2993334300C6F985 /* QuickSortLomutoV6 */,
+				47062EEC2993336C00C6F985 /* QuickSortLomutoV6Tests */,
+				47062EDE2993334300C6F985 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47062EDE2993334300C6F985 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47062EDD2993334300C6F985 /* libQuickSortLomutoV6.a */,
+				47062EEB2993336C00C6F985 /* QuickSortLomutoV6Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47062EDF2993334300C6F985 /* QuickSortLomutoV6 */ = {
+			isa = PBXGroup;
+			children = (
+				47062EE02993334300C6F985 /* QuickSortLomutoV6.swift */,
+			);
+			path = QuickSortLomutoV6;
+			sourceTree = "<group>";
+		};
+		47062EEC2993336C00C6F985 /* QuickSortLomutoV6Tests */ = {
+			isa = PBXGroup;
+			children = (
+				47062EED2993336C00C6F985 /* QuickSortLomutoV6Tests.swift */,
+			);
+			path = QuickSortLomutoV6Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47062EDC2993334300C6F985 /* QuickSortLomutoV6 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47062EE42993334300C6F985 /* Build configuration list for PBXNativeTarget "QuickSortLomutoV6" */;
+			buildPhases = (
+				47062ED92993334300C6F985 /* Sources */,
+				47062EDA2993334300C6F985 /* Frameworks */,
+				47062EDB2993334300C6F985 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickSortLomutoV6;
+			productName = QuickSortLomutoV6;
+			productReference = 47062EDD2993334300C6F985 /* libQuickSortLomutoV6.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		47062EEA2993336C00C6F985 /* QuickSortLomutoV6Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47062EF22993336C00C6F985 /* Build configuration list for PBXNativeTarget "QuickSortLomutoV6Tests" */;
+			buildPhases = (
+				47062EE72993336C00C6F985 /* Sources */,
+				47062EE82993336C00C6F985 /* Frameworks */,
+				47062EE92993336C00C6F985 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47062EF12993336C00C6F985 /* PBXTargetDependency */,
+			);
+			name = QuickSortLomutoV6Tests;
+			productName = QuickSortLomutoV6Tests;
+			productReference = 47062EEB2993336C00C6F985 /* QuickSortLomutoV6Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47062ED52993334300C6F985 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					47062EDC2993334300C6F985 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					47062EEA2993336C00C6F985 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 47062ED82993334300C6F985 /* Build configuration list for PBXProject "QuickSortLomutoV6" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47062ED42993334300C6F985;
+			productRefGroup = 47062EDE2993334300C6F985 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47062EDC2993334300C6F985 /* QuickSortLomutoV6 */,
+				47062EEA2993336C00C6F985 /* QuickSortLomutoV6Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47062EE92993336C00C6F985 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47062ED92993334300C6F985 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47062EE12993334300C6F985 /* QuickSortLomutoV6.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47062EE72993336C00C6F985 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47062EEE2993336C00C6F985 /* QuickSortLomutoV6Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47062EF12993336C00C6F985 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47062EDC2993334300C6F985 /* QuickSortLomutoV6 */;
+			targetProxy = 47062EF02993336C00C6F985 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47062EE22993334300C6F985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		47062EE32993334300C6F985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47062EE52993334300C6F985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47062EE62993334300C6F985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		47062EF32993336C00C6F985 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.QuickSortLomutoV6Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47062EF42993336C00C6F985 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.QuickSortLomutoV6Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47062ED82993334300C6F985 /* Build configuration list for PBXProject "QuickSortLomutoV6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47062EE22993334300C6F985 /* Debug */,
+				47062EE32993334300C6F985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47062EE42993334300C6F985 /* Build configuration list for PBXNativeTarget "QuickSortLomutoV6" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47062EE52993334300C6F985 /* Debug */,
+				47062EE62993334300C6F985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47062EF22993336C00C6F985 /* Build configuration list for PBXNativeTarget "QuickSortLomutoV6Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47062EF32993336C00C6F985 /* Debug */,
+				47062EF42993336C00C6F985 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47062ED52993334300C6F985 /* Project object */;
+}
