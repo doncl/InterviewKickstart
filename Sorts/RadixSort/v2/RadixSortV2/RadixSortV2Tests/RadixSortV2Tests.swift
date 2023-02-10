@@ -1,23 +1,25 @@
 //
-//  CountingSortTests.swift
-//  CountingSortTests
+//  RadixSortV2Tests.swift
+//  RadixSortV2Tests
 //
-//  Created by Don Clore on 2/9/23.
+//  Created by Don Clore on 2/10/23.
 //
 
 import XCTest
-@testable import CountingSortV1
+@testable import RadixSortV2
 
-final class CountingSortTests: XCTestCase {
+final class RadixSortV2Tests: XCTestCase {
 
-  public func testCountingSort() {
+  public func testRadixSortV2() {
+    let numbersBook = [21, 345, 13, 101, 50, 234, 1]
     let numbers0 = [9, 1, 4, 4, 2, 8, 7, 6, 5]
     let numbers1 = [5, 8, 3, 9, 4, 1, 7]
     let numbers2 = [-400000]
     let numbers3 = [5, 8, 3, 9, 4, 1, 7]
-    
-    lazy var numbers: [[Int]] = [numbers0, numbers1, numbers2, numbers3,]
+    let numbersNeg = [88, 410, -24, 1772, 20]
 
+    lazy var numbers: [[Int]] = [numbersBook, numbers0, numbers1, numbers2, numbers3, numbersNeg,]
+        
     for var numbersCandidate in numbers {
       testSort(numbers: &numbersCandidate)
     }
@@ -26,7 +28,7 @@ final class CountingSortTests: XCTestCase {
   private func testSort(numbers: inout [Int]) {
     let sortedCopy = numbers.sorted()
     
-    countingSort(numbers: &numbers)
+    radixSort(numbers: &numbers)
     
     for i in 0..<numbers.count {
         let numbersCandidate = numbers[i]
@@ -35,4 +37,5 @@ final class CountingSortTests: XCTestCase {
         XCTAssertEqual(numbersCandidate, sortedCopyCandidate)
     }
   }
+
 }
