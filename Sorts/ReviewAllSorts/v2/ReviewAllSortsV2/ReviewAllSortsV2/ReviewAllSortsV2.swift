@@ -1,19 +1,18 @@
 //
-//  ReviewAllSorts.swift
-//  ReviewAllSorts
+//  ReviewAllSortsV2.swift
+//  ReviewAllSortsV2
 //
 //  Created by Don Clore on 2/9/23.
 //
-
-
 func selectionSort(numbers: inout [Int]) {
   for i in 0..<numbers.count {
-    var smallestIndex: Int = i
+    var smallestIndex = i
     for j in (i + 1)..<numbers.count {
       if numbers[j] < numbers[smallestIndex] {
         smallestIndex = j
       }
     }
+    
     if smallestIndex != i {
       numbers.swapAt(smallestIndex, i)
     }
@@ -39,7 +38,6 @@ func insertionSort(numbers: inout [Int]) {
       numbers[red + 1] = numbers[red]
       red -= 1
     }
-    
     numbers[red + 1] = temp
   }
 }
@@ -54,34 +52,35 @@ func mergeSort(numbers: inout [Int]) {
     
     helper(start: start, end: midpoint)
     helper(start: midpoint + 1, end: end)
-
+    
     var aux: [Int] = []
     
-    var leftStart = start
-    var rightStart = midpoint + 1
+    var leftIdx = start
+    var rightIdx = midpoint + 1
     
-    while leftStart <= midpoint && rightStart <= end {
-      if numbers[leftStart] <= numbers[rightStart] {
-        aux.append(numbers[leftStart])
-        leftStart += 1
+    while leftIdx <= midpoint && rightIdx <= end {
+      if numbers[leftIdx] <= numbers[rightIdx] {
+        aux.append(numbers[leftIdx])
+        leftIdx += 1
       } else {
-        aux.append(numbers[rightStart])
-        rightStart += 1
+        aux.append(numbers[rightIdx])
+        rightIdx += 1
       }
     }
     
-    if leftStart <= midpoint {
-      for i in leftStart...midpoint {
+    if leftIdx <= midpoint {
+      for i in leftIdx...midpoint {
         aux.append(numbers[i])
       }
-    } else if rightStart <= end {
-      for i in rightStart...end {
+    } else if rightIdx <= end {
+      for i in rightIdx...end {
         aux.append(numbers[i])
       }
     }
+  
+    let count = end - start + 1
+    assert(aux.count == count)
     
-    let size = end - start + 1
-    assert(aux.count == size)
     for i in 0..<aux.count {
       numbers[i + start] = aux[i]
     }
@@ -90,24 +89,19 @@ func mergeSort(numbers: inout [Int]) {
   helper(start: 0, end: numbers.count - 1)
 }
 
-
 func quickSortLomuto(numbers: inout [Int]) {
   func helper(start: Int, end: Int) {
     guard end > start else {
       return
     }
     
-    let midpoint = Int.random(in: start...end)
-    numbers.swapAt(start, midpoint)
-    
     var smaller = start
     for bigger in (start + 1)...end {
       if numbers[bigger] < numbers[start] {
         smaller += 1
-        numbers.swapAt(bigger, smaller)
+        numbers.swapAt(smaller, bigger)
       }
     }
-    
     numbers.swapAt(start, smaller)
     
     helper(start: start, end: smaller - 1)
@@ -123,8 +117,8 @@ func quickSortHoare(numbers: inout [Int]) {
       return
     }
 
-    let midpoint = Int.random(in: start...end)
-    numbers.swapAt(start, midpoint)
+    let randomPivotIndex = Int.random(in: start...end)
+    numbers.swapAt(start, randomPivotIndex)
 
     var red = start + 1
     var green = end
@@ -141,7 +135,6 @@ func quickSortHoare(numbers: inout [Int]) {
       }
     }
     numbers.swapAt(start, green)
-    
     helper(start: start, end: green - 1)
     helper(start: green + 1, end: end)
   }
@@ -150,61 +143,49 @@ func quickSortHoare(numbers: inout [Int]) {
 }
 
 func heapSort(numbers: inout [Int]) {
-  func leftChildIndex(ofParentAt index: Int) -> Int {
+  func leftChildIndex(at index: Int) -> Int {
     2 * index + 1
   }
   
-  func rightChildIndex(ofParentAt index: Int) -> Int {
+  func rightChildIndex(at index: Int) -> Int {
     2 * index + 2
   }
   
-  func siftDown(from index: Int, upTo size: Int) {
+  func siftDown(at index: Int, upTo size: Int) {
     var parentIndex = index
     
     while true {
-      // index for left and right child
-      let leftChildIndex = leftChildIndex(ofParentAt: parentIndex)
-      let rightChildIndex = rightChildIndex(ofParentAt: parentIndex)
-      
-      // set temp var to parent
       var candidateIndex = parentIndex
+      let leftChild = leftChildIndex(at: parentIndex)
+      let rightChild = rightChildIndex(at: parentIndex)
       
-      // We check children to see if they're bigger, we only check left and right
-      // once each per iteration, if left is bigger, candidate becomes left, and
-      // we'll then check the right child of the candidate.  This works because on
-      // the next iteration we'll check the leftIndex of the candidate.
-      
-      // check and see if the left child is bigger
-      if leftChildIndex < size && numbers[leftChildIndex] > numbers[candidateIndex] {
-        candidateIndex = leftChildIndex
+      if leftChild < size && numbers[leftChild] > numbers[candidateIndex] {
+        candidateIndex = leftChild
       }
       
-      // now check the right child of whatever we're pointing at now.
-      if rightChildIndex < size && numbers[rightChildIndex] > numbers[candidateIndex] {
-        candidateIndex = rightChildIndex
+      if rightChild < size && numbers[rightChild] > numbers[candidateIndex] {
+        candidateIndex = rightChild
       }
       
-      // If we didn't move at all, after that, then the heap constraint holds true, we're done.
       if candidateIndex == parentIndex {
         return
       }
       
-      // swap the candidate with the parent, so the parent is now in its bubble-down place
-      numbers.swapAt(parentIndex, candidateIndex)
-      
-      // now start at the candidate (where the parent was swapped to), and keep looking).
+      numbers.swapAt(candidateIndex, parentIndex)
       parentIndex = candidateIndex
     }
   }
   
-  if !numbers.isEmpty {
-    for i in stride(from: numbers.count / 2 - 1, through: 0, by: -1) {
-      siftDown(from: i, upTo: numbers.count)
-    }
-    
-    for index in stride(from: numbers.count - 1, through: 0, by: -1) {
-      numbers.swapAt(0, index)
-      siftDown(from: 0, upTo: index)
-    }
+  guard !numbers.isEmpty else {
+    return
+  }
+  
+  for i in stride(from: numbers.count / 2 - 1, through: 0, by: -1) {
+    siftDown(at: i, upTo: numbers.count)
+  }
+  
+  for i in stride(from: numbers.count - 1, through: 0, by: -1) {
+    numbers.swapAt(i, 0)
+    siftDown(at: 0, upTo: i)
   }
 }
