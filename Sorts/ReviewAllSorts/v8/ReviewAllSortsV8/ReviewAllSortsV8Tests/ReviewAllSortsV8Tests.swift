@@ -1,7 +1,7 @@
 
 
 import XCTest
-@testable import InsertionAndLomutoV5
+@testable import ReviewAllSortsV8
 
 final class ReviewAllSortsV2Tests: XCTestCase {
   let numbers0 = [6, 3, 4, 6, 9, 2, 7, 111]
@@ -12,14 +12,33 @@ final class ReviewAllSortsV2Tests: XCTestCase {
   
   lazy var numbers: [[Int]] = [numbers0, numbers1, numbers2, numbers3, numbers4]
   
+  func testSelectionSort() {
+    sortTestHelper(sort: selectionSort)
+  }
+  
+  func testBubbleSort() {
+    sortTestHelper(sort: bubbleSort)
+  }
+  
   func testInsertionSort() {
     sortTestHelper(sort: insertionSort)
   }
   
+  func testMergeSort() {
+    sortTestHelper(sort: mergeSort)
+  }
+
   func testQuickSortLomuto() {
     sortTestHelper(sort: quickSortLomuto)
   }
   
+  func testQuickSortHoare() {
+    sortTestHelper(sort: quickSortHoare)
+  }
+  
+  func testHeapSort() {
+    sortTestHelper(sort: heapSort)
+  }
   
   private func sortTestHelper(sort: (_ numbers: inout [Int]) -> ()) {
         
