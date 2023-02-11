@@ -12,7 +12,7 @@ func radixSort(numbers: inout [Int]) {
   var done = false
 
   
-  func populatePosMap(forNthDigitPlace digits: Int) {
+  func populatePosAndNegMaps(forNthDigitPlace digits: Int) {
     done = true
     var posMap: [[Int]] = Array(repeating: [], count: base)
     var negMap: [[Int]] = Array(repeating: [], count: base)
@@ -40,7 +40,7 @@ func radixSort(numbers: inout [Int]) {
 
   var digitsPlace = 1
   while !done {
-    populatePosMap(forNthDigitPlace: digitsPlace)
+    populatePosAndNegMaps(forNthDigitPlace: digitsPlace)
     digitsPlace *= base
   }
     
