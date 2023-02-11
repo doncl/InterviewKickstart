@@ -1,15 +1,9 @@
-//
-//  ReviewAllSortsV8Tests.swift
-//  ReviewAllSortsV8Tests
-//
-//  Created by Don Clore on 2/11/23.
-//
 
 
 import XCTest
-@testable import ReviewAllSortsV8
+@testable import InsertionAndLomutoV5Tests
 
-final class ReviewAllSortsV8Tests: XCTestCase {
+final class ReviewAllSortsV2Tests: XCTestCase {
   let numbers0 = [6, 3, 4, 6, 9, 2, 7, 111]
   let numbers1 = [5, 8, 3, 9, 4, 1, 7]
   let numbers2 = [-913743, 3241, 999999, 1243153, 0, 0, 999999999]
@@ -65,5 +59,4 @@ final class ReviewAllSortsV8Tests: XCTestCase {
     }
   }
 }
-
 
