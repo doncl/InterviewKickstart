@@ -69,33 +69,70 @@ import Foundation
 //  return mutableSecond
 //}
 
-func merge_one_into_another(first: [Int], second: [Int]) -> [Int] {
-  var mutableSecond = second
-  
-  var firstIdx = 0
-  var secondIdx = 0
-  
-  while firstIdx < first.count && secondIdx < second.count {
-    let firstNum = first[firstIdx]
-    let secondNum = mutableSecond[secondIdx]
-    
-    
-    if firstNum > secondNum {
-        while secondIdx < second.count - 1 && firstNum > mutableSecond[secondIdx]  && mutableSecond[secondIdx] != 0 {
-            secondIdx += 1
-        }
-    }
-      
-    for i in stride(from: mutableSecond.count - 1, to: secondIdx, by: -1) {
-        mutableSecond[i] = mutableSecond[i - 1]
-    }
+//func merge_one_into_another(first: [Int], second: [Int]) -> [Int] {
+//  var mutableSecond = second
+//
+//  var firstIdx = 0
+//  var secondIdx = 0
+//
+//  while firstIdx < first.count && secondIdx < second.count {
+//    let firstNum = first[firstIdx]
+//    let secondNum = mutableSecond[secondIdx]
+//
+//
+//    if firstNum > secondNum {
+//        while secondIdx < second.count - 1 && firstNum > mutableSecond[secondIdx]  && mutableSecond[secondIdx] != 0 {
+//            secondIdx += 1
+//        }
+//    }
+//
+//    for i in stride(from: mutableSecond.count - 1, to: secondIdx, by: -1) {
+//        mutableSecond[i] = mutableSecond[i - 1]
+//    }
+//
+//    mutableSecond[secondIdx] = firstNum
+//    firstIdx += 1
+//    secondIdx += 1
+//  }
+//
+//  return mutableSecond
+//}
 
-    mutableSecond[secondIdx] = firstNum
-    firstIdx += 1
-    secondIdx += 1
+func merge_one_into_another(first: [Int], second: [Int]) -> [Int] {
+  guard !first.isEmpty else {
+    return second
   }
   
-  return mutableSecond
+  var aux: [Int] = []
+  var firstIdx = 0
+  var secondIdx = 0
+  let firstArray = first
+  let secondArray = Array(second[0..<first.count])
+  
+  while firstIdx < first.count && secondIdx < secondArray.count {
+    let firstNum = firstArray[firstIdx]
+    let secondNum = secondArray[secondIdx]
+    
+    if firstNum <= secondNum {
+      aux.append(firstNum)
+      firstIdx += 1
+    } else {
+      aux.append(secondNum)
+      secondIdx += 1
+    }
+  }
+  
+  if firstIdx < first.count {
+    for i in firstIdx..<first.count {
+      aux.append(first[i])
+    }
+  } else if secondIdx < secondArray.count {
+    for i in secondIdx..<secondArray.count {
+      aux.append(second[i])
+    }
+  }
+    
+  return aux
 }
 
 //let first = [  185, 198]
