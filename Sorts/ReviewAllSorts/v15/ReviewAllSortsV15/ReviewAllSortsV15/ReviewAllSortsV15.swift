@@ -106,7 +106,7 @@ func quickSortLomuto(numbers: inout [Int]) {
     let pivot = numbers[start]
     
     for bigger in (start + 1)...end {
-      if numbers[bigger] < pivot {
+      if numbers[bigger] <= pivot {
         smaller += 1
         numbers.swapAt(bigger, smaller)
       }
