@@ -7,21 +7,21 @@
 func dutch_flag_sort(balls: [Character]) -> [Character] {
   var balls = balls
   
-  var rightMostGreen = 0 // equals leftMostBlue
-  var rightMostRed = 0
+  var startOfBlue = 0 // equals leftMostBlue
+  var startOfGreen = 0
   
   for i in 0..<balls.count {
     let ball = balls[i]
     switch ball {
       case "R":
-        balls.swapAt(i, rightMostGreen)
-        balls.swapAt(rightMostGreen, rightMostRed)
-        rightMostGreen += 1
-        rightMostRed += 1
+        balls.swapAt(i, startOfBlue)
+        balls.swapAt(startOfBlue, startOfGreen)
+        startOfBlue += 1
+        startOfGreen += 1
         
       case "G":
-        balls.swapAt(i, rightMostGreen)
-        rightMostGreen += 1
+        balls.swapAt(i, startOfBlue)
+        startOfBlue += 1
         
       case "B":
         // do nothing
