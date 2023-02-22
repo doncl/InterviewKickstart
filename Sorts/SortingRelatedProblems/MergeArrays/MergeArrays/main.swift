@@ -131,6 +131,7 @@ func merge_one_into_another(first: [Int], second: [Int]) -> [Int] {
       aux.append(second[i])
     }
   }
+  
     
   return aux
 }
