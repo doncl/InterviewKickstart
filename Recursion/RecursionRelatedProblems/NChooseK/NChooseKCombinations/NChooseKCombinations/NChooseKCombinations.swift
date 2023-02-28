@@ -65,7 +65,7 @@ struct FindCombinations: Backtracker {
     combinations.append(a)
   }
   
-  mutating func constructCandidates(a: [Int], index: Int, k: Int) -> [Int] {
+  mutating func constructCandidates(a: [Int], k: Int) -> [Int] {
     return input
   }
   
@@ -84,7 +84,7 @@ struct FindCombinations: Backtracker {
     desiredSize = k
     
     var slate: [Int] = []
-    backTrack(a: &slate, index: 0, k: 0)
+    backTrack(a: &slate, k: 0)
     return combinations
   }
 }
@@ -95,26 +95,25 @@ protocol Backtracker {
   var finished: Bool { get }
   func isSolution(a: [entityType], k: Int) -> Bool
   mutating func processSolution(a: [entityType], k: Int)
-  mutating func constructCandidates(a: [entityType], index: Int, k: Int) -> [entityType]
+  mutating func constructCandidates(a: [entityType], k: Int) -> [entityType]
   
   mutating func makeMove(a: inout [entityType], k: Int)
   mutating func unmakeMove(a: inout [entityType], k: Int)
   
-  mutating func backTrack(a: inout [entityType], index: Int, k: Int)
+  mutating func backTrack(a: inout [entityType], k: Int)
 }
 
 extension Backtracker {
-  mutating func backTrack(a: inout [entityType], index: Int, k: Int) {
+  mutating func backTrack(a: inout [entityType], k: Int) {
     if isSolution(a: a, k: k) {
       processSolution(a: a, k: k)
     } else {
-      let candidates = constructCandidates(a: a, index: index, k: k)
-      for i in index..<candidates.count {
-        print("\(#function) index = \(index) i = \(i), count = \(candidates.count) k = \(k)")
+      let candidates = constructCandidates(a: a, k: k)
+      for i in k..<candidates.count {
         let candidate = candidates[i]
         a.append(candidate)
         makeMove(a: &a, k: k)
-        backTrack(a: &a, index: i + 1, k: k + 1)
+        backTrack(a: &a, k: 1 + i)
         unmakeMove(a: &a, k: k)
         a.removeLast()
         if finished {
