@@ -13,30 +13,29 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
     array.append(i)
   }
 
-  func constructCandidates(index: Int, a: [Int], k: Int) -> [Int] {
+  func constructCandidates(index: Int, a: [Int]) -> [Int] {
     return array
   }
 
-  func helper(index: Int, kVal: Int, slate: inout [Int]) {
-     guard kVal != 0 else {
+  func helper(index: Int, slate: inout [Int]) {
+    guard slate.count != k else {
       result.append(slate)
       return
     }
 
-    let candidates = constructCandidates(index: index, a: array, k: kVal)
+    let candidates = constructCandidates(index: index, a: array)
     for i in index..<candidates.count {
+      print("\(#function) index = \(index) i = \(i), count = \(candidates.count)")
       let candidate = candidates[i]
       slate.append(candidate)
-      helper(index: i + 1, kVal: kVal - 1, slate: &slate)
+      helper(index: i + 1, slate: &slate)
       slate.removeLast()
     }
   }
 
-
-
   var slate: [Int] = []
 
-  helper(index: 0, kVal: k, slate: &slate)
+  helper(index: 0, slate: &slate)
 
   return result
 }

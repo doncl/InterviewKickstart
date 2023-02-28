@@ -42,6 +42,19 @@ final class NChooseKCombinationsV2Tests: XCTestCase {
     
     XCTAssertEqual(resultSet, expectedSet)
   }
+
+  func test2NumExample() {
+    let result = find_combinations(n: 2, k: 2)
+    XCTAssertEqual(result.count, 1)
+    
+    let resultSet = Set<Int>(result[0])
+    let expectedSet = Set<Int>([1, 2,])
+    
+    XCTAssertEqual(resultSet, expectedSet)
+  }
+
+  
+  
   
   func testFailingExample() {
     let result = find_combinations(n: 15, k: 5)

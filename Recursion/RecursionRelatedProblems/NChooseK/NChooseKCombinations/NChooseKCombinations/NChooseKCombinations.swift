@@ -58,7 +58,7 @@ struct FindCombinations: Backtracker {
   var startingIndex = 0
   
   func isSolution(a: [Int], k: Int) -> Bool {
-    return k == desiredSize
+    return a.count == desiredSize
   }
   
   mutating func processSolution(a: [Int], k: Int) {
@@ -110,6 +110,7 @@ extension Backtracker {
     } else {
       let candidates = constructCandidates(a: a, index: index, k: k)
       for i in index..<candidates.count {
+        print("\(#function) index = \(index) i = \(i), count = \(candidates.count) k = \(k)")
         let candidate = candidates[i]
         a.append(candidate)
         makeMove(a: &a, k: k)
