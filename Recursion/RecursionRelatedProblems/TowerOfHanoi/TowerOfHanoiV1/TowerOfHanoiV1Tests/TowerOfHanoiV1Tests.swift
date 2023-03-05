@@ -33,4 +33,21 @@ final class TowerOfHanoiV1Tests: XCTestCase {
     
     XCTAssertEqual(ret, expectedArray)    
   }
+  
+  func testExample2() {
+    let n = 3
+    let ret = tower_of_hanoi(n: n)
+    
+    let expectedArray: [[Int]] = [
+      [1, 3],
+      [1, 2],
+      [3, 2],
+      [1, 3],
+      [2, 1],
+      [2, 3],
+      [1, 3],
+    ]
+    
+    XCTAssertEqual(ret, expectedArray)
+  }
 }

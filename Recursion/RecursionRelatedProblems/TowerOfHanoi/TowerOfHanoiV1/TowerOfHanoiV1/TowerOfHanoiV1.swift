@@ -15,7 +15,36 @@
 //  }
 //}
 
+//func tower_of_hanoi(n: Int) -> [[Int]] {
+//  var ret: [[Int]] = []
+//
+//  func helper(n: Int, src: Int, dst: Int, aux: Int) {
+//    if n == 1 {
+//      ret.append([src, dst])
+//      return
+//    }
+//
+//    helper(n: n - 1, src: src, dst: aux, aux: dst)
+//    ret.append([src, dst])
+//    helper(n: n - 1, src: aux, dst: dst, aux: src)
+//  }
+//
+//  helper(n: n, src: 1, dst: 3, aux: 2)
+//
+//  return ret
+//}
+
 func tower_of_hanoi(n: Int) -> [[Int]] {
+  var ret: [[Int]] = []
   
-  return []
+  func helper(n: Int, src: Int, dst: Int, aux: Int) {
+    if n > 0 {
+      helper(n: n - 1, src: src, dst: aux, aux: dst)
+      ret.append([src, dst])
+      helper(n: n - 1, src: aux, dst: dst, aux: src)
+    }
+  }
+  helper(n: n, src: 1, dst: 3, aux: 2)
+
+  return ret
 }
