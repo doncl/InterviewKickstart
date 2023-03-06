@@ -8,7 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		47A4444129B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4444029B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2.swift */; };
+		47A4444E29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A4444D29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.swift */; };
+		47A4444F29B6B3C400BCE1D8 /* libDecimalStringsAllowRepetitionV2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47A4443D29B6B39100BCE1D8 /* libDecimalStringsAllowRepetitionV2.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47A4445029B6B3C400BCE1D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47A4443529B6B39100BCE1D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47A4443C29B6B39100BCE1D8;
+			remoteInfo = DecimalStringsAllowRepetitionV2;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		47A4443B29B6B39100BCE1D8 /* CopyFiles */ = {
@@ -25,6 +37,8 @@
 /* Begin PBXFileReference section */
 		47A4443D29B6B39100BCE1D8 /* libDecimalStringsAllowRepetitionV2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDecimalStringsAllowRepetitionV2.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		47A4444029B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalStringsAllowRepetitionV2.swift; sourceTree = "<group>"; };
+		47A4444B29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DecimalStringsAllowRepetitionV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47A4444D29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalStringsAllowRepetitionV2Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +49,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47A4444829B6B3C400BCE1D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4444F29B6B3C400BCE1D8 /* libDecimalStringsAllowRepetitionV2.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				47A4443F29B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2 */,
+				47A4444C29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests */,
 				47A4443E29B6B39100BCE1D8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				47A4443D29B6B39100BCE1D8 /* libDecimalStringsAllowRepetitionV2.a */,
+				47A4444B29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +84,14 @@
 				47A4444029B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2.swift */,
 			);
 			path = DecimalStringsAllowRepetitionV2;
+			sourceTree = "<group>";
+		};
+		47A4444C29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				47A4444D29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.swift */,
+			);
+			path = DecimalStringsAllowRepetitionV2Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +114,24 @@
 			productReference = 47A4443D29B6B39100BCE1D8 /* libDecimalStringsAllowRepetitionV2.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		47A4444A29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47A4445229B6B3C400BCE1D8 /* Build configuration list for PBXNativeTarget "DecimalStringsAllowRepetitionV2Tests" */;
+			buildPhases = (
+				47A4444729B6B3C400BCE1D8 /* Sources */,
+				47A4444829B6B3C400BCE1D8 /* Frameworks */,
+				47A4444929B6B3C400BCE1D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47A4445129B6B3C400BCE1D8 /* PBXTargetDependency */,
+			);
+			name = DecimalStringsAllowRepetitionV2Tests;
+			productName = DecimalStringsAllowRepetitionV2Tests;
+			productReference = 47A4444B29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +143,9 @@
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					47A4443C29B6B39100BCE1D8 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					47A4444A29B6B3C400BCE1D8 = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
@@ -111,9 +164,20 @@
 			projectRoot = "";
 			targets = (
 				47A4443C29B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2 */,
+				47A4444A29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47A4444929B6B3C400BCE1D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		47A4443929B6B39100BCE1D8 /* Sources */ = {
@@ -124,7 +188,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		47A4444729B6B3C400BCE1D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47A4444E29B6B3C400BCE1D8 /* DecimalStringsAllowRepetitionV2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47A4445129B6B3C400BCE1D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47A4443C29B6B39100BCE1D8 /* DecimalStringsAllowRepetitionV2 */;
+			targetProxy = 47A4445029B6B3C400BCE1D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		47A4444229B6B39100BCE1D8 /* Debug */ = {
@@ -267,6 +347,38 @@
 			};
 			name = Release;
 		};
+		47A4445329B6B3C400BCE1D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.DecimalStringsAllowRepetitionV2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47A4445429B6B3C400BCE1D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.DecimalStringsAllowRepetitionV2Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -284,6 +396,15 @@
 			buildConfigurations = (
 				47A4444529B6B39100BCE1D8 /* Debug */,
 				47A4444629B6B39100BCE1D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47A4445229B6B3C400BCE1D8 /* Build configuration list for PBXNativeTarget "DecimalStringsAllowRepetitionV2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47A4445329B6B3C400BCE1D8 /* Debug */,
+				47A4445429B6B3C400BCE1D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
