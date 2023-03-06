@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		477E776129B69039008B7F92 /* TowersOfHanoiV5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E776029B69039008B7F92 /* TowersOfHanoiV5.swift */; };
+		477E776E29B6904B008B7F92 /* TowersOfHanoiV5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477E776D29B6904B008B7F92 /* TowersOfHanoiV5Tests.swift */; };
+		477E776F29B6904B008B7F92 /* libTowersOfHanoiV5.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 477E775D29B69039008B7F92 /* libTowersOfHanoiV5.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		477E777029B6904B008B7F92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 477E775529B69039008B7F92 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 477E775C29B69039008B7F92;
+			remoteInfo = TowersOfHanoiV5;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		477E775B29B69039008B7F92 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		477E775D29B69039008B7F92 /* libTowersOfHanoiV5.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTowersOfHanoiV5.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		477E776029B69039008B7F92 /* TowersOfHanoiV5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowersOfHanoiV5.swift; sourceTree = "<group>"; };
+		477E776B29B6904B008B7F92 /* TowersOfHanoiV5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TowersOfHanoiV5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		477E776D29B6904B008B7F92 /* TowersOfHanoiV5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowersOfHanoiV5Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		477E775A29B69039008B7F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477E776829B6904B008B7F92 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477E776F29B6904B008B7F92 /* libTowersOfHanoiV5.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		477E775429B69039008B7F92 = {
+			isa = PBXGroup;
+			children = (
+				477E775F29B69039008B7F92 /* TowersOfHanoiV5 */,
+				477E776C29B6904B008B7F92 /* TowersOfHanoiV5Tests */,
+				477E775E29B69039008B7F92 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		477E775E29B69039008B7F92 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				477E775D29B69039008B7F92 /* libTowersOfHanoiV5.a */,
+				477E776B29B6904B008B7F92 /* TowersOfHanoiV5Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		477E775F29B69039008B7F92 /* TowersOfHanoiV5 */ = {
+			isa = PBXGroup;
+			children = (
+				477E776029B69039008B7F92 /* TowersOfHanoiV5.swift */,
+			);
+			path = TowersOfHanoiV5;
+			sourceTree = "<group>";
+		};
+		477E776C29B6904B008B7F92 /* TowersOfHanoiV5Tests */ = {
+			isa = PBXGroup;
+			children = (
+				477E776D29B6904B008B7F92 /* TowersOfHanoiV5Tests.swift */,
+			);
+			path = TowersOfHanoiV5Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		477E775C29B69039008B7F92 /* TowersOfHanoiV5 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477E776429B69039008B7F92 /* Build configuration list for PBXNativeTarget "TowersOfHanoiV5" */;
+			buildPhases = (
+				477E775929B69039008B7F92 /* Sources */,
+				477E775A29B69039008B7F92 /* Frameworks */,
+				477E775B29B69039008B7F92 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TowersOfHanoiV5;
+			productName = TowersOfHanoiV5;
+			productReference = 477E775D29B69039008B7F92 /* libTowersOfHanoiV5.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		477E776A29B6904B008B7F92 /* TowersOfHanoiV5Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 477E777229B6904B008B7F92 /* Build configuration list for PBXNativeTarget "TowersOfHanoiV5Tests" */;
+			buildPhases = (
+				477E776729B6904B008B7F92 /* Sources */,
+				477E776829B6904B008B7F92 /* Frameworks */,
+				477E776929B6904B008B7F92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				477E777129B6904B008B7F92 /* PBXTargetDependency */,
+			);
+			name = TowersOfHanoiV5Tests;
+			productName = TowersOfHanoiV5Tests;
+			productReference = 477E776B29B6904B008B7F92 /* TowersOfHanoiV5Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		477E775529B69039008B7F92 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					477E775C29B69039008B7F92 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					477E776A29B6904B008B7F92 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 477E775829B69039008B7F92 /* Build configuration list for PBXProject "TowersOfHanoiV5" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 477E775429B69039008B7F92;
+			productRefGroup = 477E775E29B69039008B7F92 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				477E775C29B69039008B7F92 /* TowersOfHanoiV5 */,
+				477E776A29B6904B008B7F92 /* TowersOfHanoiV5Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		477E776929B6904B008B7F92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		477E775929B69039008B7F92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477E776129B69039008B7F92 /* TowersOfHanoiV5.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		477E776729B6904B008B7F92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477E776E29B6904B008B7F92 /* TowersOfHanoiV5Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		477E777129B6904B008B7F92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 477E775C29B69039008B7F92 /* TowersOfHanoiV5 */;
+			targetProxy = 477E777029B6904B008B7F92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		477E776229B69039008B7F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		477E776329B69039008B7F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		477E776529B69039008B7F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477E776629B69039008B7F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		477E777329B6904B008B7F92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.TowersOfHanoiV5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		477E777429B6904B008B7F92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.TowersOfHanoiV5Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		477E775829B69039008B7F92 /* Build configuration list for PBXProject "TowersOfHanoiV5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477E776229B69039008B7F92 /* Debug */,
+				477E776329B69039008B7F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477E776429B69039008B7F92 /* Build configuration list for PBXNativeTarget "TowersOfHanoiV5" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477E776529B69039008B7F92 /* Debug */,
+				477E776629B69039008B7F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		477E777229B6904B008B7F92 /* Build configuration list for PBXNativeTarget "TowersOfHanoiV5Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				477E777329B6904B008B7F92 /* Debug */,
+				477E777429B6904B008B7F92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 477E775529B69039008B7F92 /* Project object */;
+}
