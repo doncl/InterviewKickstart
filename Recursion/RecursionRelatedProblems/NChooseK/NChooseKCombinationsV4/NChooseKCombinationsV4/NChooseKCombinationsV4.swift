@@ -30,7 +30,7 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
   
   var slate: [Int] = []
 
-   helper(slate: &slate, index: 0, kVal: k)
+  helper(slate: &slate, index: 0, kVal: k)
   return ret 
 }
 
