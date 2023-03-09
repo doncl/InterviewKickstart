@@ -272,7 +272,7 @@ func letter_case_permutation(s: String) -> [String] {
     }
   }
   
-  var build: String = ""
+  let build: String = ""
   helper(build: build, index: 0)
   return ret
 }
