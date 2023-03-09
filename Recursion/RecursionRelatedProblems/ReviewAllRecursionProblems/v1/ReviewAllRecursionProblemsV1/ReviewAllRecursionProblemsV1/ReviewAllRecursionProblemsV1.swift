@@ -263,16 +263,8 @@ func letter_case_permutation(s: String) -> [String] {
     let stringIndex: String.Index = s.index(s.startIndex, offsetBy: index)
     let char = s[stringIndex]
     if !char.isNumber {
-      let alternateChar: String
-      if char.isUppercase {
-        alternateChar = char.lowercased()
-      } else {
-        alternateChar = char.uppercased()
-      }
-      
-      helper(build: build + String(char), index: index + 1)
-      helper(build: build + alternateChar, index: index + 1)
-      
+      helper(build: build + char.lowercased(), index: index + 1)
+      helper(build: build + char.uppercased(), index: index + 1)
     } else {
       helper(build: build + String(char), index: index + 1)
     }
