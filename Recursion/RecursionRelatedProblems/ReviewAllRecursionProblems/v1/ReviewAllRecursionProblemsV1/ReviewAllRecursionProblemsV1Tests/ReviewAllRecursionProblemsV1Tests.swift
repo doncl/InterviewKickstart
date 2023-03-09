@@ -482,6 +482,65 @@ final class ReviewAllRecursionProblemsV1Tests: XCTestCase {
     XCTAssertEqual(retSet, expectSet)
   }
 
+  // MARK: Letter case Permutation
+  // Given a string s, we can transform every letter individually to be lowercase or
+  // uppercase to create another string.  Return a list of all possible strings we
+  // could create.
+
+  func testLetterCasePermutationExample1() {
+    let s = "a1b2"
+    let output: [String] = letter_case_permutation(s: s).sorted()
+    let expected = [
+      "a1b2",
+      "a1B2",
+      "A1b2",
+      "A1B2",
+    ].sorted()
+    
+    XCTAssertEqual(output, expected)
+  }
+  
+  func testLetterCasePermutationExample2() {
+    let s = "3z4"
+    let output: [String] = letter_case_permutation(s: s)
+    let expected = [
+      "3z4",
+      "3Z4",
+    ]
+    
+    XCTAssertEqual(output.sorted(), expected.sorted())
+  }
+
+  func testLetterCasePermutationExample3() {
+    let s = "12345"
+    let output: [String] = letter_case_permutation(s: s)
+    let expected = [
+      "12345"
+    ]
+    
+    XCTAssertEqual(output.sorted(), expected.sorted())
+  }
+  
+  func testLetterCasePermutationExample() {
+    let s = "A1B2C"
+    let output: [String] = letter_case_permutation(s: s).sorted()
+    let expected = [
+      "a1b2c",
+      "a1b2C",
+      "a1B2c",
+      "a1B2C",
+      "A1b2c",
+      "A1b2C",
+      "A1B2c",
+      "A1B2C",
+    ].sorted()
+    
+    let outputSet = Set<String>(expected)
+    XCTAssertEqual(outputSet.count, output.count)
+    
+    XCTAssertEqual(output, expected)
+  }
+  
 }
 
 

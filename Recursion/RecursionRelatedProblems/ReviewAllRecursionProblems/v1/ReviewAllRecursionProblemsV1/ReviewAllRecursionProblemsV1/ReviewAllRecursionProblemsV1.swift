@@ -238,3 +238,41 @@ func generateAllStringSubsets(s: String) -> [String] {
   helper(build: build, bank: bank)
   return ret
 }
+
+
+// MARK: Letter case Permutation
+// Given a string s, we can transform every letter individually to be lowercase or
+// uppercase to create another string.  Return a list of all possible strings we
+// could create.
+
+func letter_case_permutation(s: String) -> [String] {
+  var ret: [String] = []
+  
+  func helper(build: String, index: Int) {
+    guard build.count < s.count else {
+      ret.append(build)
+      return
+    }
+    
+    let stringIndex: String.Index = s.index(s.startIndex, offsetBy: index)
+    let char = s[stringIndex]
+    if !char.isNumber {
+      let alternateChar: String
+      if char.isUppercase {
+        alternateChar = char.lowercased()
+      } else {
+        alternateChar = char.uppercased()
+      }
+      
+      helper(build: build + String(char), index: index + 1)
+      helper(build: build + alternateChar, index: index + 1)
+      
+    } else {
+      helper(build: build + String(char), index: index + 1)
+    }
+  }
+  
+  var build: String = ""
+  helper(build: build, index: 0)
+  return ret
+}
