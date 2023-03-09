@@ -249,9 +249,15 @@ func letter_case_permutation(s: String) -> [String] {
   var ret: [String] = []
   
   func helper(build: String, index: Int) {
-    guard build.count < s.count else {
+//    guard build.count < s.count else {
+//      ret.append(build)
+//      return
+//    }
+    
+    // OR - either way works
+    guard index < s.count else {
       ret.append(build)
-      return
+      return 
     }
     
     let stringIndex: String.Index = s.index(s.startIndex, offsetBy: index)
