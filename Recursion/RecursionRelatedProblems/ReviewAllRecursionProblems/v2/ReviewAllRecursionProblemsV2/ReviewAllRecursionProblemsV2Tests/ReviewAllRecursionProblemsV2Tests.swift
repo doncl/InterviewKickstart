@@ -479,6 +479,28 @@ final class ReviewAllRecursionProblemsV2Tests: XCTestCase {
     
     XCTAssertEqual(retSet, expectSet)
   }
+  
+  // MARK: GenerateIntSubsets
+  func testGenerateAllintSubsets() {
+    let input: [Int] = [1, 2, 3,]
+    let ret = generateAllIntSubsets(arr: input)
+    
+    let expectedOutput = [
+      [3],
+      [1],
+      [2],
+      [1, 2, 3],
+      [1, 3],
+      [2, 3],
+      [1, 2],
+      []
+    ]
+    
+    let retSet: Set<[Int]> = Set<[Int]>(ret)
+    let expectedSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectedSet)
+  }
 
   // MARK: Letter case Permutation
   // Given a string s, we can transform every letter individually to be lowercase or

@@ -246,6 +246,33 @@ func generateAllStringSubsets(s: String) -> [String] {
   return ret
 }
 
+// MARK: GenerateAllIntSubsets
+func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
+  var ret: [[Int]] = []
+  
+  func helper(build: [Int], bank: [Int]) {
+    guard bank.count > 0 else {
+      ret.append(build)
+      return
+    }
+    
+    let rightSide = Array(bank[1...])
+    let firstInt = bank[0]
+    
+    // exclude
+    helper(build: build, bank: rightSide)
+    
+    // include
+    var newBuild = build
+    newBuild.append(firstInt)
+    
+    helper(build: newBuild, bank: rightSide)
+  }
+  
+  helper(build: [], bank: arr)
+  return ret
+}
+
 
 // MARK: Letter case Permutation
 // Given a string s, we can transform every letter individually to be lowercase or
