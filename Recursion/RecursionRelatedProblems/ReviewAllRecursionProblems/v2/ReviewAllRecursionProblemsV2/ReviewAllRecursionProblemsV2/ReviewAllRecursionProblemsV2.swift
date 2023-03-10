@@ -255,7 +255,7 @@ func generateAllStringSubsets(s: String) -> [String] {
 func letter_case_permutation(s: String) -> [String] {
   var ret: [String] = []
   
-  func helper(build: String, index: Int) {
+  func helper(build: inout String, index: Int) {
     guard index < s.count else {
       ret.append(build)
       return
@@ -265,14 +265,22 @@ func letter_case_permutation(s: String) -> [String] {
     let char = s[stringIndex]
     
     if char.isNumber {
-      helper(build: build + String(char), index: index + 1)
+      build.append(String(char))
+      helper(build: &build, index: index + 1)
+      _ = build.popLast()
     } else {
-      helper(build: build + char.lowercased(), index: index + 1)
-      helper(build: build + char.uppercased(), index: index + 1)
+      build.append(char.lowercased())
+      helper(build: &build, index: index + 1)
+      
+      _ = build.popLast()
+      build.append(char.uppercased())
+      helper(build: &build, index: index + 1)
+      _ = build.popLast()
     }
   }
   
-  helper(build: "", index: 0)
+  var build: String = ""
+  helper(build: &build, index: 0)
 
   return ret
 }
