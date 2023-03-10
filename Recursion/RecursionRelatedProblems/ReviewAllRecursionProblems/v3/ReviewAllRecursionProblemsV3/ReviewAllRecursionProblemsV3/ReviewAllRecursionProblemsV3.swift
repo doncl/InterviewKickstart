@@ -219,8 +219,7 @@ func generateAllStringSubsets(s: String) -> [String] {
       return
     }
     
-    let leftOneCharString = bank[bank.startIndex]
-    bank.remove(at: bank.startIndex)
+    let leftOneCharString = bank.remove(at: bank.startIndex)
     
     // exclusion
     helper(build: &build, bank: &bank)
@@ -251,8 +250,7 @@ func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
       return
     }
     
-    let leftItem: Int = bank[0]
-    bank.remove(at: 0)
+    let leftItem: Int = bank.remove(at: 0)
     
     // exclusion
     helper(build: &build, bank: &bank)
