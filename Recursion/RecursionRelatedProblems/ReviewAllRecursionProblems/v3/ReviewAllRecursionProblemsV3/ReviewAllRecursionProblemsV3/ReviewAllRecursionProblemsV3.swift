@@ -213,27 +213,31 @@ func permuteStringWithoutRepetition(s: String) -> [String] {
 func generateAllStringSubsets(s: String) -> [String] {
   var ret: [String] = []
   
-  func helper(build: String, bank: String) {
+  func helper(build: inout String, bank: inout String) {
     guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
-    let onethIdx: String.Index = bank.index(bank.startIndex, offsetBy: 1)
-    let leftOneCharString = String(bank[bank.startIndex])
-    let rightPartString = String(bank[onethIdx...])
+    let leftOneCharString = bank[bank.startIndex]
+    bank.remove(at: bank.startIndex)
     
     // exclusion
-    helper(build: build, bank: rightPartString)
-    
+    helper(build: &build, bank: &bank)
+                
     // inclusion
-    var newBuild = build
-    newBuild.append(leftOneCharString)
-    helper(build: newBuild, bank: rightPartString) 
+    build.append(leftOneCharString)
+    helper(build: &build, bank: &bank)
+    
+    // backtrack
+    bank.insert(leftOneCharString, at: bank.startIndex)
+    _ = build.popLast()
   }
   
 
-  helper(build: "", bank: s)
+  var build: String = ""
+  var bank = s
+  helper(build: &build, bank: &bank)
   return ret
 }
 
@@ -241,29 +245,31 @@ func generateAllStringSubsets(s: String) -> [String] {
 func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
-  func helper(build: [Int], bank: [Int]) {
+  func helper(build: inout [Int], bank: inout [Int]) {
     guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
     let leftItem: Int = bank[0]
-    let rightSubarray: [Int] = Array(bank[1...])
+    bank.remove(at: 0)
     
     // exclusion
-    helper(build: build, bank: rightSubarray)
+    helper(build: &build, bank: &bank)
     
     // inclusion
-    var newBuild = build
-    newBuild.append(leftItem)
-    helper(build: newBuild, bank: rightSubarray)
+ 
+    build.append(leftItem)
+    helper(build: &build, bank: &bank)
     
+    bank.insert(leftItem, at: 0)
+    _ = build.popLast()
   }
   
-  let build: [Int] = []
-  let bank = arr
+  var build: [Int] = []
+  var bank = arr
   
-  helper(build: build, bank: bank)
+  helper(build: &build, bank: &bank)
   
   return ret
 }
