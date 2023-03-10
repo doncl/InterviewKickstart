@@ -1,31 +1,28 @@
 //
-//  ReviewAllRecursionProblemsV2.swift
-//  ReviewAllRecursionProblemsV2
+//  ReviewAllRecursionProblemsV3.swift
+//  ReviewAllRecursionProblemsV3
 //
-//  Created by Don Clore on 3/9/23.
+//  Created by Don Clore on 3/10/23.
 //
 
 // MARK: Fibonacci
 func find_fibonacci(n: Int) -> Int {
-  
   func helper(n: Int, base1: Int, base2: Int) -> Int {
     guard n > 0 else {
-      return base1 
+      return base1
     }
     return helper(n: n - 1, base1: base2, base2: base1 + base2)
   }
-  
-  let ret = helper(n: n, base1: 0, base2: 1)
-  
- return ret
+ return helper(n: n, base1: 0, base2: 1)
 }
 
 // MARK: NChooseK
 func find_combinations(n: Int, k: Int) -> [[Int]] {
-   var ret: [[Int]] = []
-  var array: [Int] = []
+  var ret: [[Int]] = []
+  
+  var bank: [Int] = []
   for i in 1...n {
-    array.append(i)
+    bank.append(i)
   }
   
   func helper(build: inout [Int], bank: inout [Int], index: Int, kVal: Int) {
@@ -34,7 +31,8 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
       return
     }
     
-    for i in index..<bank.count {
+    let count = bank.count
+    for i in index..<count {
       let candidate = bank[i]
       build.append(candidate)
       
@@ -46,8 +44,7 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
   
   var build: [Int] = []
   
-  
-  helper(build: &build, bank: &array, index: 0, kVal: k)
+  helper(build: &build, bank: &bank, index: 0, kVal: k)
   return ret
 }
 
@@ -66,13 +63,13 @@ func towers_of_hanoi(n: Int) -> [[Int]] {
   }
   
   helper(n: n, src: 1, dst: 3, aux: 2)
-  
   return ret
 }
 
 // MARK: BinaryStrings
 func binaryStrings(n: Int) -> [String] {
   var ret: [String] = []
+  
   guard n > 0 else {
     return ret
   }
@@ -86,8 +83,7 @@ func binaryStrings(n: Int) -> [String] {
     helper(build: build + "0")
     helper(build: build + "1")
   }
-
-
+  
   helper(build: "")
   
   return ret
@@ -96,7 +92,8 @@ func binaryStrings(n: Int) -> [String] {
 // MARK: DecimalStringsNoRepetition
 func decimalStringsNoRepetition(n: Int) -> [String] {
   var ret: [String] = []
-  let digits: String = "0123456789"
+  var digits: String = "0123456789"
+  
   
   func helper(build: inout String, bank: inout String) {
     guard build.count < n else {
@@ -104,13 +101,12 @@ func decimalStringsNoRepetition(n: Int) -> [String] {
       return
     }
     
-    let count = bank.count
-    for i in 0..<count {
+
+    for i in 0..<bank.count {
       let stringIndex: String.Index = bank.index(bank.startIndex, offsetBy: i)
       let candidate = bank[stringIndex]
-      
-      build.append(String(candidate))
       bank.remove(at: stringIndex)
+      build.append(candidate)
       
       helper(build: &build, bank: &bank)
       
@@ -119,11 +115,8 @@ func decimalStringsNoRepetition(n: Int) -> [String] {
     }
   }
  
-
   var build: String = ""
-  var bank = digits
-  
-  helper(build: &build, bank: &bank)
+  helper(build: &build, bank: &digits)
   return ret
 }
 
@@ -142,19 +135,16 @@ func decimalStringsAllowRepetition(n: Int) -> [String] {
     for i in 0..<digits.count {
       let stringIndex: String.Index = digits.index(digits.startIndex, offsetBy: i)
       let candidate = digits[stringIndex]
-      
       build.append(candidate)
       
       helper(build: &build)
-      
       _ = build.popLast()
     }
   }
   
   var build: String = ""
-  
-  helper(build: &build)
  
+  helper(build: &build)
   return ret
 }
 
@@ -163,13 +153,14 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
   func helper(build: inout [Int], bank: inout [Int]) {
-    guard build.count < arr.count else {
+    guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
     for i in 0..<bank.count {
       let candidate = bank[i]
+      
       build.append(candidate)
       bank.remove(at: i)
       
@@ -180,10 +171,11 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
     }
   }
   
-  var build: [Int] = []
   var bank = arr
+  var build: [Int] = []
   
   helper(build: &build, bank: &bank)
+  
   return ret
 }
 
@@ -192,13 +184,12 @@ func permuteStringWithoutRepetition(s: String) -> [String] {
   var ret: [String] = []
   
   func helper(build: inout String, bank: inout String) {
-    guard build.count < s.count else {
+    guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
-    let count = bank.count
-    for i in 0..<count {
+    for i in 0..<bank.count {
       let stringIndex: String.Index = bank.index(bank.startIndex, offsetBy: i)
       let candidate = bank[stringIndex]
       build.append(candidate)
@@ -210,11 +201,11 @@ func permuteStringWithoutRepetition(s: String) -> [String] {
       _ = build.popLast()
     }
   }
- 
+  
   var build: String = ""
   var bank = s
   helper(build: &build, bank: &bank)
-    
+ 
   return ret
 }
 
@@ -223,24 +214,24 @@ func generateAllStringSubsets(s: String) -> [String] {
   var ret: [String] = []
   
   func helper(build: String, bank: String) {
-    guard bank.count > 0 else {
+    guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
-    let oneFromZero: String.Index = bank.index(bank.startIndex, offsetBy: 1)
-    let oneToEnd = String(bank[oneFromZero...])
-    let oneCharString = String(bank[bank.startIndex])
+    let onethIdx: String.Index = bank.index(bank.startIndex, offsetBy: 1)
+    let leftOneCharString = String(bank[bank.startIndex])
+    let rightPartString = String(bank[onethIdx...])
     
-    //exclude
-    helper(build: build, bank: oneToEnd)
+    // exclusion
+    helper(build: build, bank: rightPartString)
     
+    // inclusion
     var newBuild = build
-    newBuild.append(oneCharString)
-    
-    // include
-    helper(build: newBuild, bank: oneToEnd)
+    newBuild.append(leftOneCharString)
+    helper(build: newBuild, bank: rightPartString) 
   }
+  
 
   helper(build: "", bank: s)
   return ret
@@ -251,28 +242,31 @@ func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
   func helper(build: [Int], bank: [Int]) {
-    guard bank.count > 0 else {
+    guard !bank.isEmpty else {
       ret.append(build)
       return
     }
     
-    let rightSide = Array(bank[1...])
-    let firstInt = bank[0]
+    let leftItem: Int = bank[0]
+    let rightSubarray: [Int] = Array(bank[1...])
     
-    // exclude
-    helper(build: build, bank: rightSide)
+    // exclusion
+    helper(build: build, bank: rightSubarray)
     
-    // include
+    // inclusion
     var newBuild = build
-    newBuild.append(firstInt)
+    newBuild.append(leftItem)
+    helper(build: newBuild, bank: rightSubarray)
     
-    helper(build: newBuild, bank: rightSide)
   }
   
-  helper(build: [], bank: arr)
+  let build: [Int] = []
+  let bank = arr
+  
+  helper(build: build, bank: bank)
+  
   return ret
 }
-
 
 // MARK: Letter case Permutation
 // Given a string s, we can transform every letter individually to be lowercase or
@@ -283,24 +277,25 @@ func letter_case_permutation(s: String) -> [String] {
   var ret: [String] = []
   
   func helper(build: inout String, index: Int) {
-    guard index < s.count else {
+    guard build.count < s.count else {
       ret.append(build)
-      return
+      return 
     }
     
-    let stringIndex = s.index(s.startIndex, offsetBy: index)
-    let char = s[stringIndex]
-    
-    if char.isNumber {
-      build.append(String(char))
+    let stringIndex: String.Index = s.index(s.startIndex, offsetBy: index)
+    let candidate = s[stringIndex]
+
+    if candidate.isNumber {
+      build.append(candidate)
       helper(build: &build, index: index + 1)
       _ = build.popLast()
     } else {
-      build.append(char.lowercased())
-      helper(build: &build, index: index + 1)
+      build.append(candidate.lowercased())
+      helper(build: &build, index:  index + 1)
       
       _ = build.popLast()
-      build.append(char.uppercased())
+      
+      build.append(candidate.uppercased())
       helper(build: &build, index: index + 1)
       _ = build.popLast()
     }
@@ -308,7 +303,7 @@ func letter_case_permutation(s: String) -> [String] {
   
   var build: String = ""
   helper(build: &build, index: 0)
-
+  
   return ret
 }
 
