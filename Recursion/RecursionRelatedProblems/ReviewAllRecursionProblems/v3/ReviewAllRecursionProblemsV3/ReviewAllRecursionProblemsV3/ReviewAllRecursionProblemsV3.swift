@@ -264,20 +264,20 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
 
 //func permuteStringWithoutRepetitions(s: String) -> [String] {
 //  var ret: [String] = []
-//  
+//
 //  func swapCharacters(input: String, index1: Int, index2: Int) -> String {
 //      var characters = Array(input)
 //      characters.swapAt(index1, index2)
 //
 //      return String(characters)
 //  }
-//  
+//
 //  func helper(slate: inout String, index: Int) {
 //    guard index < slate.count else {
 //      ret.append(slate)
 //      return
 //    }
-//    
+//
 //    for i in index..<slate.count {
 //      if i != index {
 //        slate = swapCharacters(input: slate, index1: i, index2: index)
@@ -292,10 +292,10 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
 //      }
 //    }
 //  }
-//  
+//
 //  var slate = s
 //  helper(slate: &slate, index: 0)
-//  
+//
 //  return ret
 //}
 
