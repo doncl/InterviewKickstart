@@ -149,65 +149,155 @@ func decimalStringsAllowRepetition(n: Int) -> [String] {
 }
 
 // MARK: PermuteIntsWithoutRepetition
+//func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
+//  var ret: [[Int]] = []
+//
+//  func helper(build: inout [Int], bank: inout [Int]) {
+//    guard !bank.isEmpty else {
+//      ret.append(build)
+//      return
+//    }
+//
+//    for i in 0..<bank.count {
+//      let candidate = bank[i]
+//
+//      build.append(candidate)
+//      bank.remove(at: i)
+//
+//      helper(build: &build, bank: &bank)
+//
+//      bank.insert(candidate, at: i)
+//      _ = build.popLast()
+//    }
+//  }
+//
+//  var bank = arr
+//  var build: [Int] = []
+//
+//  helper(build: &build, bank: &bank)
+//
+//  return ret
+//}
+
+//func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
+//  var ret: [[Int]] = []
+//
+//  func helper(bank: inout [Int], index: Int) {
+//    guard index < bank.count else {
+//      ret.append(bank)
+//      return
+//    }
+//
+//    for pick in index..<bank.count {
+//      if pick != index {
+//        bank.swapAt(pick, index)
+//      }
+//
+//      helper(bank: &bank, index: index + 1)
+//
+//      if pick != index {
+//        bank.swapAt(pick, index)
+//      }
+//    }
+//  }
+//
+//  var bank = arr
+//
+//  helper(bank: &bank, index: 0)
+//
+//  return ret
+//}
+
 func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
-  
-  func helper(build: inout [Int], bank: inout [Int]) {
-    guard !bank.isEmpty else {
-      ret.append(build)
+
+  func helper(bank: inout [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(bank)
       return
     }
-    
-    for i in 0..<bank.count {
-      let candidate = bank[i]
-      
-      build.append(candidate)
-      bank.remove(at: i)
-      
-      helper(build: &build, bank: &bank)
-      
-      bank.insert(candidate, at: i)
-      _ = build.popLast()
+
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      helper(bank: &bank, index: index + 1)
+      bank.swapAt(i, index)
     }
   }
-  
+
   var bank = arr
-  var build: [Int] = []
-  
-  helper(build: &build, bank: &bank)
-  
+
+  helper(bank: &bank, index: 0)
+
   return ret
 }
 
+
 // MARK: PermuteStringWithoutRepetition
-func permuteStringWithoutRepetition(s: String) -> [String] {
-  var ret: [String] = []
-  
-  func helper(build: inout String, bank: inout String) {
-    guard !bank.isEmpty else {
-      ret.append(build)
-      return
-    }
-    
-    for i in 0..<bank.count {
-      let stringIndex: String.Index = bank.index(bank.startIndex, offsetBy: i)
-      let candidate = bank[stringIndex]
-      build.append(candidate)
-      bank.remove(at: stringIndex)
-      
-      helper(build: &build, bank: &bank)
-      
-      bank.insert(candidate, at: stringIndex)
-      _ = build.popLast()
-    }
-  }
-  
-  var build: String = ""
-  var bank = s
-  helper(build: &build, bank: &bank)
- 
-  return ret
-}
+//func permuteStringWithoutRepetition(s: String) -> [String] {
+//  var ret: [String] = []
+//
+//  func helper(build: inout String, bank: inout String) {
+//    guard !bank.isEmpty else {
+//      ret.append(build)
+//      return
+//    }
+//
+//    for i in 0..<bank.count {
+//      let stringIndex: String.Index = bank.index(bank.startIndex, offsetBy: i)
+//      let candidate = bank[stringIndex]
+//      build.append(candidate)
+//      bank.remove(at: stringIndex)
+//
+//      helper(build: &build, bank: &bank)
+//
+//      bank.insert(candidate, at: stringIndex)
+//      _ = build.popLast()
+//    }
+//  }
+//
+//  var build: String = ""
+//  var bank = s
+//  helper(build: &build, bank: &bank)
+//
+//  return ret
+//}
+
+//func permuteStringWithoutRepetitions(s: String) -> [String] {
+//  var ret: [String] = []
+//  
+//  func swapCharacters(input: String, index1: Int, index2: Int) -> String {
+//      var characters = Array(input)
+//      characters.swapAt(index1, index2)
+//
+//      return String(characters)
+//  }
+//  
+//  func helper(slate: inout String, index: Int) {
+//    guard index < slate.count else {
+//      ret.append(slate)
+//      return
+//    }
+//    
+//    for i in index..<slate.count {
+//      if i != index {
+//        slate = swapCharacters(input: slate, index1: i, index2: index)
+//      }
+//      let stringIndex = slate.index(slate.startIndex, offsetBy: i)
+//      let candidate = slate[stringIndex]
+//      slate.append(candidate)
+//      helper(slate: &slate, index: index + 1)
+//      _ = slate.popLast()
+//      if i != index {
+//        slate = swapCharacters(input: slate, index1: i, index2: index)
+//      }
+//    }
+//  }
+//  
+//  var slate = s
+//  helper(slate: &slate, index: 0)
+//  
+//  return ret
+//}
 
 // MARK: GenerateStringSubsets
 func generateAllStringSubsets(s: String) -> [String] {
