@@ -159,28 +159,60 @@ func decimalStringsAllowRepetition(n: Int) -> [String] {
   return ret
 }
 
-// MARK: PermuteIntsWithoutRepetition
+// MARK: PermuteIntsWithoutRepetition - mutable, no slate
 func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
-  var build = arr
+  func helper(array: inout [Int], index: Int) {
+    guard index < array.count else {
+      ret.append(array)
+      return
+    }
+    
+    for i in index..<array.count {
+      array.swapAt(i, index)
+      
+      
+      helper(array: &array, index: index + 1)
+      
+      array.swapAt(i, index)
+    }
+  }
   
-  func helper(build: inout [Int], index: Int) {
-    guard index < build.count else {
+  // array here is the bank, but it's also used as the build by
+  // swapping elements around.
+  var array = arr
+  
+  helper(array: &array, index: 0)
+  
+  return ret
+}
+
+// This one uses a slate, but also does the swapping.
+func permuteIntsWithoutRepetitions2(arr: [Int]) -> [[Int]] {
+  var ret: [[Int]] = []
+  
+  
+  func helper(bank: inout [Int], build: inout [Int], index: Int) {
+    guard index < bank.count else {
       ret.append(build)
       return
     }
     
-    for i in index..<build.count {
-      build.swapAt(i, index)
+    for i in index..<bank.count {
+      bank.swapAt(index, i)
       
-      helper(build: &build, index: index + 1)
+      build.append(bank[index])
+      helper(bank: &bank, build: &build, index: index + 1)
+      _ = build.popLast()
       
-      build.swapAt(i, index)
+      bank.swapAt(index, i)
     }
   }
   
-  helper(build: &build, index: 0)
+  var bank = arr
+  var build: [Int] = []
+  helper(bank: &bank, build: &build, index: 0)
   
   return ret
 }
@@ -188,24 +220,68 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
 // MARK: PermuteStringWithoutRepetition
 func permuteStringWithoutRepetition(s: String) -> [String] {
   var ret: [String] = []
-  var charArray = Array(s)
-  
-  func helper(index: Int) {
-    guard index < charArray.count else {
-      let string = String(charArray)
-      ret.append(string)
+ 
+  func helper(bank: inout [Character], build: inout [Character], index: Int) {
+    guard index < bank.count else {
+      ret.append(String(build))
       return
     }
     
-    for i in index..<charArray.count {
-      charArray.swapAt(i, index)
-      helper(index: index + 1)
-      charArray.swapAt(index, i)
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      build.append(bank[index])
+      
+      helper(bank: &bank, build: &build, index: index + 1)
+      
+      _ = build.popLast()
+      bank.swapAt(i, index)
+    }
+  }
+
+  var build: [Character] = []
+  var bank = Array(s)
+  
+  helper(bank: &bank, build: &build, index: 0)
+  return ret
+}
+
+// MARK: PermuteStringAllowRepetitions
+func permuteStringAllowRepetitions(s: String) -> [String] {
+  var ret: [String] = []
+  
+  func helper(build: inout [Character], bank: inout [Character], index: Int) {
+    guard index < bank.count else {
+      ret.append(String(build))
+      return
+    }
+    
+    var seen = Set<Character>()
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      if seen.contains(candidate) {
+        continue
+      }
+      
+      seen.insert(candidate)
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
     }
   }
   
-  helper(index: 0)
-  return ret
+  var bank = Array(s)
+  var build: [Character] = []
+  
+  helper(build: &build, bank: &bank, index: 0)
+  return ret 
 }
 
 func generateAllStringSubsets(s: String) -> [String] {

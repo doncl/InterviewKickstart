@@ -447,6 +447,27 @@ final class ReviewAllRecursionProblemsV4Tests: XCTestCase {
     XCTAssertEqual(expectSet, retSet)
   }
   
+  func testPermuteIntsWithoutRepetitions123_v2() {
+    let array = [1, 2, 3,]
+    
+    let ret = permuteIntsWithoutRepetitions2(arr: array)
+    
+    let retSet = Set<[Int]>(ret)
+    
+    let expect = [
+      [1,2,3,],
+      [1,3,2,],
+      [2,1,3,],
+      [2,3,1,],
+      [3,1,2,],
+      [3,2,1,],
+    ]
+    
+    let expectSet = Set<[Int]>(expect)
+      
+    XCTAssertEqual(expectSet, retSet)
+  }
+  
   // MARK: PermuteStringWithoutRepetition
   func testABC() {
     let string = "ABC"
@@ -466,6 +487,24 @@ final class ReviewAllRecursionProblemsV4Tests: XCTestCase {
     let expectSet = Set<String>(expect)
       
       XCTAssertEqual(expectSet, retSet)
+  }
+  
+  // MARK: PermuteStringAllowRepetition
+  func testPermuteStringAllowRepetition() {
+    let string = "AAB"
+    
+    let ret = permuteStringAllowRepetitions(s: string)
+    let retSet = Set<String>(ret)
+    
+    let expect = [
+      "AAB",
+      "ABA",
+      "BAA",
+    ]
+    
+    let expectSet = Set<String>(expect)
+    
+    XCTAssertEqual(retSet, expectSet)
   }
   
   // MARK: GenerateStringSubsets
@@ -508,6 +547,7 @@ final class ReviewAllRecursionProblemsV4Tests: XCTestCase {
     
     XCTAssertEqual(retSet, expectedSet)
   }
+  
 
   // MARK: Letter case Permutation
   // Given a string s, we can transform every letter individually to be lowercase or

@@ -274,7 +274,7 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
 //
 //  func helper(slate: inout String, index: Int) {
 //    guard index < slate.count else {
-//      ret.append(slate)
+//      ret.append(slate) q
 //      return
 //    }
 //
