@@ -217,6 +217,46 @@ func permuteIntsWithoutRepetitions2(arr: [Int]) -> [[Int]] {
   return ret
 }
 
+// MARK: PermuteIntsAllowRepetitions
+func permuteIntsAllowRepetitions(arr: [Int]) -> [[Int]] {
+  var ret: [[Int]] = []
+  
+  func helper(build: inout [Int], bank: inout [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    
+    var seen = Set<Int>()
+    
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      
+      if seen.contains(candidate) {
+        continue
+      }
+      
+      seen.insert(candidate)
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
+    }
+  }
+  
+  var build: [Int] = []
+  var bank = arr
+  
+  helper(build: &build, bank: &bank, index: 0)
+  return ret
+}
+
 // MARK: PermuteStringWithoutRepetition
 func permuteStringWithoutRepetition(s: String) -> [String] {
   var ret: [String] = []
@@ -340,6 +380,87 @@ func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
   return ret
 }
 
+// MARK: GenerateIntSubsetsAllowDuplicates
+func generateIntSubsetsAllowDuplicates(arr: [Int]) -> [[Int]] {
+  var ret: [[Int]] = []
+
+  func helper(build: inout [Int], bank: [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+
+    let candidate = bank[index]
+//    var count = 1 // we already have one copy
+//    var j = index + 1
+//    while j < bank.count && bank[j] == bank[index] {
+//      j += 1
+//      count += 1
+//    }
+    var count = 0
+    for c in index..<bank.count {
+      if bank[c] == bank[index] {
+        count += 1
+      } else {
+        break 
+      }
+    }
+    for copies in 0...count {
+      for _ in 0..<copies {
+        build.append(candidate)
+      }
+      helper(build: &build, bank: bank, index: index + count)
+
+      for _ in 0..<copies {
+        _ = build.popLast()
+      }
+    }
+  }
+
+  var build: [Int] = []
+  let bank = arr.sorted()
+
+  helper(build: &build, bank: bank, index: 0)
+
+  return ret
+}
+
+//func generateIntSubsetsAllowDuplicates(arr: [Int]) -> [[Int]] {
+//  var ret: [[Int]] = []
+//
+//  func helper(build: inout [Int], bank: [Int], index: Int) {
+//    guard index < bank.count else {
+//      ret.append(build)
+//      return
+//    }
+//
+//    let candidate = bank[index]
+//    var count = 1 // we already have one copy
+//    var j = index + 1
+//    while j < bank.count && bank[j] == bank[index] {
+//      j += 1
+//      count += 1
+//    }
+//
+//    for _ in 1...count {
+//      build.append(candidate)
+//      helper(build: &build, bank: bank, index: index + count)
+//    }
+//
+//    for _ in 1...count {
+//      _ = build.popLast()
+//    }
+//  }
+//
+//  var build: [Int] = []
+//  var bank = arr
+//
+//  helper(build: &build, bank: bank, index: 0)
+//
+//  return ret
+//}
+
+
 // MARK: Letter case Permutation
 // Given a string s, we can transform every letter individually to be lowercase or
 // uppercase to create another string.  Return a list of all possible strings we
@@ -370,7 +491,6 @@ func letter_case_permutation(s: String) -> [String] {
       helper(build: &build, index: index + 1)
       _ = build.popLast()
     }
-
   }
   
   var build: String = ""

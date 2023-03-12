@@ -468,6 +468,25 @@ final class ReviewAllRecursionProblemsV4Tests: XCTestCase {
     XCTAssertEqual(expectSet, retSet)
   }
   
+  // MARK: TestPermuteIntsWithRepetitions
+  func testPermuteIntsAllowRepetitions() {
+    let array = [1, 1, 2,]
+    
+    let ret = permuteIntsAllowRepetitions(arr: array)
+    
+    let retSet = Set<[Int]>(ret)
+    
+    let expect = [
+      [1,1, 2,],
+      [1,2,1],
+      [2,1,1],
+    ]
+    
+    let expectSet = Set<[Int]>(expect)
+      
+    XCTAssertEqual(expectSet, retSet)
+  }
+  
   // MARK: PermuteStringWithoutRepetition
   func testABC() {
     let string = "ABC"
@@ -540,6 +559,85 @@ final class ReviewAllRecursionProblemsV4Tests: XCTestCase {
       [2, 3],
       [1, 2],
       []
+    ]
+    
+    var retSet: Set<[Int]> = Set<[Int]>(ret)
+    let expectedSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectedSet)
+  }
+  
+  func testGenerateIntSubsetsAllowDuplicates() {
+    let input: [Int] = [1, 2, 2,]
+    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+    
+    let expectedOutput = [
+      [2],
+      [1],
+      [1, 2, 2],
+      [2, 2],
+      [1, 2],
+      []
+    ]
+    
+    var retSet: Set<[Int]> = Set<[Int]>(ret)
+    let expectedSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectedSet)
+  }
+  
+  func testGenerateIntSubsetsAllowDuplicatesThreeTwos() {
+    let input: [Int] = [2, 2, 2,]
+    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+    
+    let expectedOutput = [
+      [2],
+      [2, 2,],
+      [2, 2, 2],
+      [],
+    ]
+    
+    var retSet: Set<[Int]> = Set<[Int]>(ret)
+    let expectedSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectedSet)
+  }
+  
+  func testGenerateIntSubsetsAllowDuplicatesTwoTwosTwoFours() {
+    let input: [Int] = [2, 2, 4, 4]
+    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+    
+    let expectedOutput = [
+      [4],
+      [4, 4],
+      [2],
+      [2, 4],
+      [2, 4, 4],
+      [2, 2,],
+      [2, 2, 4],
+      [2, 2, 4, 4,],
+      [],
+    ]
+    
+    var retSet: Set<[Int]> = Set<[Int]>(ret)
+    let expectedSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectedSet)
+  }
+  
+  func testGenerateIntSubsetsAllowDuplicatesThreeTwosOneFour() {
+    let input: [Int] = [2, 2, 2, 4]
+    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+    
+    let expectedOutput = [
+      [4],
+      [2, 4],
+      [2],
+      [2, 2,],
+      [2, 2, 4],
+      [2, 2, 2,],
+      [2, 2, 2, 4],
+      [],
     ]
     
     var retSet: Set<[Int]> = Set<[Int]>(ret)
