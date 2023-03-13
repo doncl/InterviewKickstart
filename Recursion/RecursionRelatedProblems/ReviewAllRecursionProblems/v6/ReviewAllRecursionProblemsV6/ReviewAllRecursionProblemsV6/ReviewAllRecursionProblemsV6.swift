@@ -7,13 +7,44 @@
 
 // MARK: Fibonacci
 func find_fibonacci(n: Int) -> Int {
- return 0
+  func fib(n: Int, base1: Int, base2: Int) -> Int {
+    guard n > 0 else {
+      return base1
+    }
+    return fib(n: n - 1, base1: base2, base2: base1 + base2)
+  }
+  
+  return fib(n: n, base1: 0, base2: 1)
 }
 
 // MARK: NChooseK
 func find_combinations(n: Int, k: Int) -> [[Int]] {
   var ret: [[Int]] = []
   
+  func helper(build: inout [Int], bank: inout [Int], index: Int, kVal: Int) {
+    guard kVal > 0 else {
+      ret.append(build)
+      return
+    }
+    
+    for i in index..<bank.count {
+      let candidate = bank[i]
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: i + 1, kVal: kVal - 1)
+      
+      _ = build.popLast()
+    }
+  }
+  
+  var array: [Int] = []
+  for i in 1...n {
+    array.append(i)
+  }
+  
+  var build: [Int] = []
+  
+  helper(build: &build, bank: &array, index: 0, kVal: k)
   return ret
 }
 
@@ -21,6 +52,16 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
 func towers_of_hanoi(n: Int) -> [[Int]] {
   var ret: [[Int]] = []
   
+  func helper(n: Int, src: Int, dst: Int, aux: Int) {
+    guard n > 0 else {
+      return
+    }
+    helper(n: n - 1, src: src, dst: aux, aux: dst)
+    ret.append([src, dst])
+    helper(n: n - 1, src: aux, dst: dst, aux: src)
+  }
+  
+  helper(n: n, src: 1, dst: 3, aux: 2)
   
   return ret
 }
@@ -29,8 +70,22 @@ func towers_of_hanoi(n: Int) -> [[Int]] {
 func binaryStrings(n: Int) -> [String] {
   var ret: [String] = []
   
- 
+  func helper(build: inout String) {
+    guard build.count < n else {
+      ret.append(build)
+      return
+    }
+    build.append("0")
+    helper(build: &build)
+    _ = build.popLast()
+    
+    build.append("1")
+    helper(build: &build)
+    _ = build.popLast()
+  }
   
+  var build: String = ""
+  helper(build: &build)
   return ret
 }
 
