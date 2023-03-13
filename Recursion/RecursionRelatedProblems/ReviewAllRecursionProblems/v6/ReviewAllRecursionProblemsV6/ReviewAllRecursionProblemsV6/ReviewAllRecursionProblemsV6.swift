@@ -70,6 +70,10 @@ func towers_of_hanoi(n: Int) -> [[Int]] {
 func binaryStrings(n: Int) -> [String] {
   var ret: [String] = []
   
+  guard n > 0 else {
+    return ret
+  }
+  
   func helper(build: inout String) {
     guard build.count < n else {
       ret.append(build)
@@ -93,7 +97,30 @@ func binaryStrings(n: Int) -> [String] {
 func decimalStringsNoRepetition(n: Int) -> [String] {
   var ret: [String] = []
   
- 
+  var digits: String = "0123456789"
+  
+  func helper(build: inout String) {
+    guard build.count < n else {
+      ret.append(build)
+      return
+    }
+    
+    for i in 0..<digits.count {
+      let stringIndex = digits.index(digits.startIndex, offsetBy: i)
+      let candidate = digits[stringIndex]
+      build.append(candidate)
+      digits.remove(at: stringIndex)
+      
+      helper(build: &build)
+      
+      digits.insert(candidate, at: stringIndex)
+      _ = build.popLast()
+    }
+  }
+  
+  var build: String = ""
+  
+  helper(build: &build)
 
   return ret
 }
@@ -101,15 +128,62 @@ func decimalStringsNoRepetition(n: Int) -> [String] {
 // MARK: DecimalStringsAllowRepetition
 func decimalStringsAllowRepetition(n: Int) -> [String] {
   var ret: [String] = []
-  
  
+  let digits: String = "0123456789"
+  
+  func helper(build: inout String) {
+    guard build.count < n else {
+      ret.append(build)
+      return
+    }
+    
+    for i in 0..<digits.count {
+      let stringIndex = digits.index(digits.startIndex, offsetBy: i)
+      let candidate = digits[stringIndex]
+      build.append(candidate)
+        
+      helper(build: &build)
+      
+        _ = build.popLast()
+    }
+  }
+  
+  var build: String = ""
+  
+  helper(build: &build)
+
   return ret
+
 }
 
 // MARK: PermuteIntsWithoutRepetition
 func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
+  func helper(build: inout [Int], bank: inout [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
+    }
+  }
+  
+  var build: [Int] = []
+  var bank = arr
+  helper(build: &build, bank: &bank, index: 0)
   
   return ret
 }
@@ -118,21 +192,115 @@ func permuteIntsWithoutRepetitions(arr: [Int]) -> [[Int]] {
 func permuteIntsAllowRepetitions(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
   
+  func helper(build: inout [Int], bank: inout [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    
+    var seen = Set<Int>()
+    
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      
+      if seen.contains(candidate) {
+        bank.swapAt(i, index)
+        continue
+      }
+      
+      seen.insert(candidate)
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
+    }
+  }
+  
+  var build: [Int] = []
+  var bank = arr
+  helper(build: &build, bank: &bank, index: 0)
+  
   return ret
+
 }
 
 // MARK: PermuteStringWithoutRepetition
 func permuteStringWithoutRepetition(s: String) -> [String] {
   var ret: [String] = []
   
- 
+  func helper(build: inout [Character], bank: inout [Character], index: Int) {
+    guard index < bank.count else {
+      ret.append(String(build))
+      return
+    }
+    
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
+    }
+  }
+  
+  var build: [Character] = []
+  var bank = Array(s)
+  helper(build: &build, bank: &bank, index: 0)
+  
+
   return ret
 }
 
 // MARK: PermuteStringAllowRepetitions
 func permuteStringAllowRepetitions(s: String) -> [String] {
   var ret: [String] = []
+
+  func helper(build: inout [Character], bank: inout [Character], index: Int) {
+    guard index < bank.count else {
+      ret.append(String(build))
+      return
+    }
+    
+    var seen = Set<Character>()
+    
+    for i in index..<bank.count {
+      bank.swapAt(i, index)
+      
+      let candidate = bank[index]
+      
+      if seen.contains(candidate) {
+        bank.swapAt(i, index)
+        continue
+      }
+      
+      seen.insert(candidate)
+      
+      build.append(candidate)
+      
+      helper(build: &build, bank: &bank, index: index + 1)
+      
+      _ = build.popLast()
+      
+      bank.swapAt(i, index)
+    }
+  }
   
+  var build: [Character] = []
+  var bank = Array(s)
+  helper(build: &build, bank: &bank, index: 0)
+
   return ret
 }
 
@@ -140,6 +308,28 @@ func permuteStringAllowRepetitions(s: String) -> [String] {
 func generateAllStringSubsets(s: String) -> [String] {
   var ret: [String] = []
   
+  func helper(build: inout [Character], bank: [Character]) {
+    guard bank.count > 0 else {
+      ret.append(String(build))
+      return
+    }
+    
+    let firstChar = bank[0]
+    let restOfArray = Array(bank[1...])
+    
+    // Exclude
+    helper(build: &build, bank: restOfArray)
+    
+    // Include
+    build.append(firstChar)
+    helper(build: &build, bank: restOfArray)
+    _ = build.popLast()
+  }
+  
+  var build: [Character] = []
+  let bank = Array(s)
+  
+  helper(build: &build, bank: bank)
 
   return ret
 }
@@ -147,6 +337,30 @@ func generateAllStringSubsets(s: String) -> [String] {
 // MARK: GenerateAllIntSubsets
 func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
+
+  func helper(build: inout [Int], bank: [Int]) {
+    guard bank.count > 0 else {
+      ret.append(build)
+      return
+    }
+    
+    let firstChar = bank[0]
+    let restOfArray = Array(bank[1...])
+    
+    // Exclude
+    helper(build: &build, bank: restOfArray)
+    
+    // Include
+    build.append(firstChar)
+    helper(build: &build, bank: restOfArray)
+    _ = build.popLast()
+  }
+  
+  var build: [Int] = []
+  let bank = arr
+  
+  helper(build: &build, bank: bank)
+
   
   return ret
 }
@@ -154,6 +368,36 @@ func generateAllIntSubsets(arr: [Int]) -> [[Int]] {
 // MARK: GenerateIntSubsetAllowDuplicates
 func generateIntSubsetsAllowDuplicates(arr: [Int]) -> [[Int]] {
   var ret: [[Int]] = []
+  
+  func helper(build: inout [Int], bank: [Int], index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    let candidate = bank[index]
+    var count = 0
+    while true {
+      if (index + count) == bank.count || candidate != bank[index + count] {
+        break
+      }
+      count += 1
+    }
+              
+    for copies in 0...count {
+      for _ in 0..<copies {
+        build.append(candidate)
+      }
+      helper(build: &build, bank: bank, index: index + count)
+      
+      for _ in 0..<copies {
+        _ = build.popLast()
+      }
+    }
+  }
+  
+  var build: [Int] = []
+  let bank = arr
+  helper(build: &build, bank: bank, index: 0)
   
   return ret
 }
@@ -166,6 +410,34 @@ func generateIntSubsetsAllowDuplicates(arr: [Int]) -> [[Int]] {
 func letter_case_permutation(s: String) -> [String] {
   var ret: [String] = []
   
+  func helper(build: inout String, bank: String, index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    
+    let stringIndex = bank.index(bank.startIndex, offsetBy: index)
+    let char: Character = bank[stringIndex]
+    
+    if char.isNumber {
+      build.append(char)
+      helper(build: &build, bank: bank, index: index + 1)
+      _ = build.popLast()
+    } else {
+      
+      build.append(char.lowercased())
+      helper(build: &build, bank: bank, index: index + 1)
+      _ = build.popLast()
+      
+      build.append(char.uppercased())
+      helper(build: &build, bank: bank, index: index + 1)
+      _ = build.popLast()
+    }
+  }
+  
+  var build: String = ""
+  let bank: String = s
+  helper(build: &build, bank: bank, index: 0)
 
   return ret
 }
