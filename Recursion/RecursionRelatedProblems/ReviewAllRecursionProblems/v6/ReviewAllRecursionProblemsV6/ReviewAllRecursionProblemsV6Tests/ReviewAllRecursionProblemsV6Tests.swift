@@ -613,10 +613,58 @@ final class ReviewAllRecursionProblemsV6Tests: XCTestCase {
       [],
     ]
     
-    var retSet: Set<[Int]> = Set<[Int]>(ret)
+    let retSet: Set<[Int]> = Set<[Int]>(ret)
     let expectedSet = Set<[Int]>(expectedOutput)
     
     XCTAssertEqual(retSet, expectedSet)
+  }
+  
+//  func testLeetCodeSubsetsIICase() {
+//    let input: [Int] = [4,4,4,1,4]
+//
+//    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+//    let retSet = Set<[Int]>(ret)
+//
+//    let expectedOutput = [
+//      [],
+//      [1],
+//      [1,4],
+//      [1,4,4],
+//      [1,4,4,4],
+//      [1,4,4,4,4],
+//      [4],
+//      [4,4],
+//      [4,4,4],
+//      [4,4,4,4],
+//    ]
+//
+//    let expectSet = Set<[Int]>(expectedOutput)
+//
+//    XCTAssertEqual(retSet, expectSet)
+//  }
+  
+  func testLeetCodeSubsetsIICase() {
+    let input: [Int] = [4,4, 1]
+    
+    let ret = generateIntSubsetsAllowDuplicates(arr: input)
+    let retSet = Set<[Int]>(ret)
+    
+    let expectedOutput = [
+      [],
+      [1],
+      [1,4],
+      [1,4,4],
+      [1,4,4,4],
+      [1,4,4,4,4],
+      [4],
+      [4,4],
+      [4,4,4],
+      [4,4,4,4],
+    ]
+    
+    let expectSet = Set<[Int]>(expectedOutput)
+    
+    XCTAssertEqual(retSet, expectSet)
   }
   
   // MARK: Letter case Permutation

@@ -396,7 +396,7 @@ func generateIntSubsetsAllowDuplicates(arr: [Int]) -> [[Int]] {
   }
   
   var build: [Int] = []
-  let bank = arr
+  let bank = arr.sorted()
   helper(build: &build, bank: bank, index: 0)
   
   return ret
