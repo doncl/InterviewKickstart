@@ -5,6 +5,8 @@
 //  Created by Don Clore on 3/15/23.
 //
 
+import Foundation
+
 func selectionSort(numbers: inout [Int]) {
   for i in 0..<numbers.count {
     var smallestIndex = i
@@ -651,5 +653,72 @@ func letter_case_permutation(s: String) -> [String] {
 
   return ret
 }
+
+// MARK: Generate All Combinations that Sum Equal to Target
+func generate_all_combinations(arr: [Int], target: Int) -> [[Int]] {
+  var ret: [[Int]] = []
+    
+  func helper(build: inout [Int], bank: [Int], index: Int, target: Int, remaining: Int ) {
+      
+    guard target != 0 else {
+      ret.append(build)
+      return
+    }
+    
+    guard index < bank.count else {
+      return
+    }
+    
+    guard target > 0 else {
+      return
+    }
+
+    guard remaining >= target else {
+      return
+    }
+
+    // arr[index] is in index range [index, end]
+    var endOfDupsIndex = index
+    var countOfDups = 0
+    while endOfDupsIndex < bank.count && bank[endOfDupsIndex] == bank[index] {
+      endOfDupsIndex += 1
+      countOfDups += 1
+    }
+
+    // Skipping the current element
+    let candidate = bank[index]
+    let remainingAfterDupsRun = remaining - (candidate * countOfDups)
+    
+    // So this is the 'excepting case', which subtracts the dups value sum from remaining, and scoots to the
+    // end of the run of dups.  We're *not* adding any copies of dup candidates to the build.
+    helper(build: &build, bank: bank, index: endOfDupsIndex,  target: target, remaining: remainingAfterDupsRun)
+
+    
+    // This is the 'inclusion' case where we're going to need to recurse multiple times, each with 1...coutOfDups
+    // copies of the candidate in the build.
+    // Now we're creating multiple calls with 1...dupsCount of the candidate that is duplicated.
+    // for each one, we have to count how much the n copies would affect the amount remaining.
+    for copiesCount in 1...countOfDups {
+      build.append(candidate)
+      let localSum = copiesCount * candidate
+      let localRemaining = remaining - localSum
+      let localTarget = target - localSum
+      helper(build: &build, bank: bank, index: endOfDupsIndex, target: localTarget, remaining: localRemaining )
+    }
+
+    // Backtrack to convert the array current back to it previous state
+    for _ in 0..<countOfDups {
+      _ = build.popLast()
+    }
+  }
+
+  var build: [Int] = []
+  let bank: [Int] = arr.sorted()
+  let sumOfInput: Int = arr.reduce(0, +)
+  helper(build: &build, bank: bank, index: 0,  target: target, remaining: sumOfInput)
+  
+  return ret
+}
+
 
 
