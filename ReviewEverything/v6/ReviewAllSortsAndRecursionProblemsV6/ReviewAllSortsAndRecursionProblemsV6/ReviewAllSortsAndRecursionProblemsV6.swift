@@ -699,4 +699,42 @@ func generate_all_combinations(arr: [Int], target: Int) -> [[Int]] {
   return ret
 }
 
+// MARK: Words From Phone Number
+func get_words_from_phone_number(phone_number: String) -> [String] {
+  var ret: [String] = []
+  
+  let map: [String: [String]] = [
+    "2": ["a", "b", "c",],
+    "3": ["d", "e", "f",],
+    "4": ["g", "h", "i",],
+    "5": ["j", "k", "l",],
+    "6": ["m", "n", "o",],
+    "7": ["p", "q", "r", "s",],
+    "8": ["t", "u", "v"],
+    "9": ["w", "x", "y", "z",],
+  ]
+  
+  func helper(build: inout String, index: Int) {
+    guard index < 7 else {
+      ret.append(build)
+      return
+    }
 
+    let stringIndex = phone_number.index(phone_number.startIndex, offsetBy: index)
+    let digit: String = String(phone_number[stringIndex])
+    if let stringArray: [String] = map[digit] {
+      for letter in stringArray {
+        build.append(letter)
+        helper(build: &build, index: index + 1)
+        _ = build.popLast()
+      }
+    } else {
+      helper(build: &build, index: index + 1)
+    }
+  }
+  
+  var build: String = ""
+  helper(build: &build, index: 0)
+  
+  return ret
+}
