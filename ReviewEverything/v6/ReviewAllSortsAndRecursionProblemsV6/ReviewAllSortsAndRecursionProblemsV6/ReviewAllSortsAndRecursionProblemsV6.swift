@@ -738,3 +738,48 @@ func get_words_from_phone_number(phone_number: String) -> [String] {
   
   return ret
 }
+
+func generate_palindromic_decompositions(s: String) -> [String] {
+  var ret: [String] = []
+  let bank: [Character] = Array(s)
+  
+  func isPalindrome(start: Int, end: Int) -> Bool {
+    var start = start
+    var end = end
+    
+    while start < end {
+      if bank[start] != bank[end] {
+        return false
+      }
+      start += 1
+      end -= 1
+    }
+    return true
+  }
+  
+  func helper(build: inout String, index: Int) {
+    guard index < bank.count else {
+      ret.append(build)
+      return
+    }
+    
+    var palindrome = ""
+    for i in index..<bank.count {
+      let char = bank[i]
+      
+      palindrome.append(char)
+    
+      if isPalindrome(start: index, end: i) {
+        let stringToAppend = build.isEmpty ? palindrome : "|" + palindrome
+        build.append(contentsOf: stringToAppend)
+        helper(build: &build, index: i + 1)
+        build.removeLast(stringToAppend.count)
+      }
+    }
+  }
+  
+  var build: String = ""
+  helper(build: &build, index: 0)
+  
+  return ret
+}

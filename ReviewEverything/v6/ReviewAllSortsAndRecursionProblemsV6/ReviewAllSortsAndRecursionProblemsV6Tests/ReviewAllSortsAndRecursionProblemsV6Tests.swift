@@ -1077,6 +1077,75 @@ func testCombinationsSumToTargetExample1() {
     XCTAssertEqual(ret, expected)
   }
   
+  // MARK: Palindromic Decomposition Of A String
+  func testPalindromicDecompositionOfAStringCase1() {
+    let input = "abracadabra"
+    
+    let ret = generate_palindromic_decompositions(s: input)
+    let retSet = Set<String>(ret)
+    
+    let expect = [
+      "a|b|r|a|c|ada|b|r|a",
+      "a|b|r|aca|d|a|b|r|a",
+      "a|b|r|a|c|a|d|a|b|r|a",
+    ]
+    
+    let expectSet = Set<String>(expect)
+    
+    XCTAssertEqual(expectSet, retSet)
+  }
+  
+  func testPalindromicDecompositionOfAStringFailingCase1() {
+    let input = "yyy"
+    
+    let ret = generate_palindromic_decompositions(s: input)
+    let retSet = Set<String>(ret)
+    
+    let expect = [
+      "yyy",
+      "y|yy",
+      "yy|y",
+      "y|y|y",
+    ]
+    
+    let expectSet = Set<String>(expect)
+    
+    XCTAssertEqual(expectSet, retSet)
+  }
+  
+  func testPalindromicDecompositionOfAStringFailingCase2() {
+    let input = "aa"
+    
+    let ret = generate_palindromic_decompositions(s: input)
+    let retSet = Set<String>(ret)
+    
+    let expect = [
+      "aa",
+      "a|a",
+    ]
+    
+    let expectSet = Set<String>(expect)
+    
+    XCTAssertEqual(expectSet, retSet)
+  }
+  
+  func testPalindromicDecompositionOfAStringFailingCase3() {
+    let input = "abc"
+    
+    let ret = generate_palindromic_decompositions(s: input)
+    let retSet = Set<String>(ret)
+    
+    let expect = [
+      "a|b|c",
+    ]
+    
+    let expectSet = Set<String>(expect)
+    
+    XCTAssertEqual(expectSet, retSet)
+  }
+
+
+  
   // MARK: Utility  
   private func sortTestHelper(sort: (_ numbers: inout [Int]) -> ()) {
         
