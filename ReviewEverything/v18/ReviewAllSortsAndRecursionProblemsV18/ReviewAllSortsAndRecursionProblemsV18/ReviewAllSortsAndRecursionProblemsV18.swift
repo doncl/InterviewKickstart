@@ -231,6 +231,34 @@ func find_fibonacci(n: Int) -> Int {
 }
 
 // MARK: NChooseK
+//func find_combinations(n: Int, k: Int) -> [[Int]] {
+//  var ret: [[Int]] = []
+//
+//  var bank: [Int] = []
+//  for i in 1...n {
+//    bank.append(i)
+//  }
+//
+//  func helper(build: inout [Int], index: Int, kVal: Int) {
+//    guard kVal > 0 else {
+//      ret.append(build)
+//      return
+//    }
+//
+//    for i in index..<bank.count {
+//      let candidate = bank[i]
+//      build.append(candidate)
+//      helper(build: &build, index: i + 1, kVal: kVal - 1)
+//      _ = build.popLast()
+//    }
+//  }
+//
+//  var build: [Int] = []
+//  helper(build: &build, index: 0, kVal: k)
+//
+//  return ret
+//}
+
 func find_combinations(n: Int, k: Int) -> [[Int]] {
   var ret: [[Int]] = []
   
@@ -239,23 +267,29 @@ func find_combinations(n: Int, k: Int) -> [[Int]] {
     bank.append(i)
   }
   
-  func helper(build: inout [Int], index: Int, kVal: Int) {
-    guard kVal > 0 else {
+  func helper(build: inout [Int], index: Int) {
+    guard build.count < k else {
       ret.append(build)
       return
     }
     
-    for i in index..<bank.count {
-      let candidate = bank[i]
-      build.append(candidate)
-      helper(build: &build, index: i + 1, kVal: kVal - 1)
-      _ = build.popLast()
+    guard index < bank.count else {
+      return
     }
+    
+    // Recursive case
+    // exclude
+    helper(build: &build, index: index + 1)
+    
+    // include
+    let candidate = bank[index]
+    build.append(candidate)
+    helper(build: &build, index: index + 1)
+    _ = build.popLast()
   }
   
   var build: [Int] = []
-  helper(build: &build, index: 0, kVal: k)
-  
+  helper(build: &build, index: 0)
   return ret
 }
 
