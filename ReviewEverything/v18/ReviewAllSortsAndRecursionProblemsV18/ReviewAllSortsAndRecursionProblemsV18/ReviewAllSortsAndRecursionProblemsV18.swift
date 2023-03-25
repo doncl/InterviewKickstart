@@ -795,3 +795,164 @@ func generate_palindromic_decompositions(s: String) -> [String] {
   
   return ret
 }
+
+// MARK: Check if Sum possible
+func check_if_sum_possible(arr: [Int], k: Int) -> Bool {
+  let bank: [Int] = arr
+  
+  func helper(build: inout Int, index: Int, count: Int) -> Bool {
+    if build == k && count > 0 {
+      return true
+    }
+      
+    if index == bank.count {
+      return false
+    }
+     
+    var reachedTarget: Bool = false
+    reachedTarget = helper(build: &build, index: index+1,  count: count)
+    if reachedTarget {
+      return true
+    }
+    
+    let candidate = bank[index]
+    build += candidate
+    
+    reachedTarget = helper(build: &build, index: index + 1,  count: count + 1)
+    
+    build -= candidate
+    
+    if reachedTarget {
+      return true
+    }
+    
+    return false
+  }
+  var build: Int = 0
+  let result = helper(build: &build, index: 0, count: 0)
+  return result
+}
+
+// MARK: Find all Well-formed Brackets (parens)
+func find_all_well_formed_brackets(n: Int) -> [String] {
+  var ret: [String] = []
+ 
+  func helper(build: inout [Character], leftCount: Int, rightCount: Int) {
+    guard leftCount <=  rightCount else {
+      return
+    }
+    guard leftCount > 0 || rightCount > 0 else {
+      ret.append(String(build))
+      return
+    }
+            
+    if leftCount > 0 {
+      build.append("(")
+      helper(build: &build, leftCount: leftCount - 1, rightCount: rightCount)
+      _ = build.popLast()
+    }
+    
+    //if rightCount > leftCount {
+    if rightCount > 0 {
+      build.append(")")
+      helper(build: &build, leftCount: leftCount, rightCount: rightCount - 1)
+      _ = build.popLast()
+    }
+  }
+  
+  var build: [Character] = []
+  helper(build: &build, leftCount: n, rightCount: n)
+  return ret
+}
+
+
+// MARK: N Queens problem
+func find_all_arrangements(n: Int) -> [[String]] {
+  var ret: [[Int]] = []
+  
+  func generateRowString(fromItemInRow row: Int) -> String {
+    var string = ""
+    for i in 0..<n {
+      if row == i {
+        string.append("q")
+      } else {
+        string.append("-")
+      }
+    }
+    return string
+  }
+  
+  func generateOutput() -> [[String]] {
+
+    var stringRet: [[String]] = []
+    
+    for i in 0..<ret.count {
+      let solution = ret[i]
+      var solutionStringArray: [String] = []
+      for row in solution {
+        let rowString = generateRowString(fromItemInRow: row)
+        solutionStringArray.append(rowString)
+      }
+      stringRet.append(solutionStringArray)
+    }
+    return stringRet
+  }
+  
+  func hasConflict(latestRow: Int, latestColumn: Int, earlierRow: Int, earlierColumn: Int) -> Bool {
+    // check for Column conflict
+    guard earlierColumn != latestColumn else {
+      return true
+    }
+    
+    // check for diagonal conflict
+    let columnDiff = abs(earlierColumn - latestColumn)
+    let rowDiff = abs(earlierRow - latestRow)
+
+    guard columnDiff != rowDiff else {
+      return true
+    }
+    
+    return false
+  }
+      
+  func helper(build: inout [Int], usedColumns: inout Set<Int>, index: Int) {
+    if build.count > 1 {
+      let latestColumn = build[index - 1]
+      let latestRow = index - 1
+      
+      for earlierRow in 0...index - 2 {
+        let earlierColumn = build[earlierRow]
+        
+        guard !hasConflict(
+          latestRow: latestRow,
+          latestColumn: latestColumn,
+          earlierRow: earlierRow,
+          earlierColumn: earlierColumn) else {
+          return
+        }
+      }
+    }
+    
+    // base case
+    guard index < n else {
+      ret.append(build)
+      return
+    }
+    
+    for column in 0..<n {
+      build.append(column)
+      helper(build: &build, usedColumns: &usedColumns, index: index + 1)
+      _ = build.popLast()
+    }
+  }
+  
+  var build: [Int] = []
+  var usedColumns: Set<Int> = []
+  helper(build: &build, usedColumns: &usedColumns, index: 0)
+  
+
+  let stringRet = generateOutput()
+  return stringRet
+}
+
+
