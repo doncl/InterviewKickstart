@@ -915,7 +915,7 @@ func find_all_arrangements(n: Int) -> [[String]] {
     return false
   }
       
-  func helper(build: inout [Int], usedColumns: inout Set<Int>, index: Int) {
+  func helper(build: inout [Int], availableColumns: inout Set<Int>, index: Int) {
     if build.count > 1 {
       let latestColumn = build[index - 1]
       let latestRow = index - 1
@@ -939,17 +939,23 @@ func find_all_arrangements(n: Int) -> [[String]] {
       return
     }
     
-    for column in 0..<n {
+    for column in availableColumns {
       build.append(column)
-      helper(build: &build, usedColumns: &usedColumns, index: index + 1)
+      availableColumns.remove(column)
+      helper(build: &build, availableColumns: &availableColumns, index: index + 1)
+      availableColumns.insert(column)
       _ = build.popLast()
     }
   }
   
   var build: [Int] = []
-  var usedColumns: Set<Int> = []
-  helper(build: &build, usedColumns: &usedColumns, index: 0)
-  
+  var columns: [Int] = []
+  for i in 0..<n {
+    columns.append(i)
+  }
+  var availableColumns: Set<Int> = Set<Int>(columns)
+                                            
+  helper(build: &build, availableColumns: &availableColumns, index: 0)
 
   let stringRet = generateOutput()
   return stringRet
