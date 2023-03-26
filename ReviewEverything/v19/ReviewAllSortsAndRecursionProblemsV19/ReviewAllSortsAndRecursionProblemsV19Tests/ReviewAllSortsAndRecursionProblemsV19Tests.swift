@@ -1155,6 +1155,7 @@ func testCombinationsSumToTargetExample1() {
     }
     
     let testCases: [TestCase] = [
+      TestCase(arr: [2, 4, 6], target: 6, result: true),
       TestCase(arr: [2, 4, 8], target: 6, result: true),
       TestCase(arr: [0], target: 0, result: true),
       TestCase(arr: [1], target: 0, result: false),
