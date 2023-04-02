@@ -247,3 +247,8 @@ func delete_from_bst(root: BinaryTreeNode?, values_to_be_deleted: [Int]) -> Bina
   return ret
 }
 
+
+func level_order_traversal(root: BinaryTreeNode?) -> [[Int]] {
+  var ret: [[Int]] = []
+  return ret
+}

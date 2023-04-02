@@ -47,8 +47,7 @@ func level_order_traversal(root: BinaryTreeNode?) -> [[Int]] {
   ret.append([root.value])
 
   var levelArray: [Int] = []
-  var level = 0
- 
+  var level = 0 
   return ret
 }
 
