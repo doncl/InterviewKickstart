@@ -231,4 +231,9 @@ func find_all_arrangements(n: Int) -> [[String]] {
 }
 
 
+// MARK:  Trees problems
+func delete_from_bst(root: BinaryTreeNode?, values_to_be_deleted: [Int]) -> BinaryTreeNode? {
+  var ret = root
+  return ret
+}
 
