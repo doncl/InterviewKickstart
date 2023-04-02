@@ -1,4 +1,9 @@
-//___FILEHEADER___
+//
+//  ReviewAllSortsAndRecursionProblemsV30.swift
+//  ReviewAllSortsAndRecursionProblemsV30
+//
+//  Created by Don Clore on 4/2/23.
+//
 
 func selectionSort(numbers: inout [Int]) {
   
@@ -180,7 +185,7 @@ func generate_palindromic_decompositions(s: String) -> [String] {
 // MARK: Check if Sum possible
 func check_if_sum_possible(arr: [Int], k: Int) -> Bool {
   let bank: [Int] = arr
-  var result = false 
+  var result = false
   
   return result
 }
