@@ -35,6 +35,7 @@ struct Q {
         return left.popLast()
     }
 }
+
 func level_order_traversal(root: BinaryTreeNode?) -> [[Int]] {
   var ret: [[Int]] = []
   guard let root = root else {
@@ -47,7 +48,35 @@ func level_order_traversal(root: BinaryTreeNode?) -> [[Int]] {
   ret.append([root.value])
 
   var levelArray: [Int] = []
-  var level = 0 
+  var level = 0
+  while !q.isEmpty {
+    var node = q.deQueue()!
+    if node.value == Int.min {
+      if !levelArray.isEmpty {
+        ret.append(levelArray)
+      }
+      levelArray = []
+      level += 1
+      if q.isEmpty {
+        break
+      }
+      assert(!q.isEmpty)
+      node = q.deQueue()!
+      q.add(BinaryTreeNode(value: Int.min))
+    }
+    
+    print("level \(level), value = \(node.value)")
+    if let left = node.left {
+      q.add(left)
+      levelArray.append(left.value)
+    }
+    if let right = node.right {
+      q.add(right)
+      levelArray.append(right.value)
+    }
+
+  }
+    
   return ret
 }
 
