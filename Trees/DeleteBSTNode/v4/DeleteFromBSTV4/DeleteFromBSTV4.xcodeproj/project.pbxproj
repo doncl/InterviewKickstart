@@ -1,0 +1,415 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		47215C1F29E5DE42005CD225 /* DeleteFromBSTV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C1E29E5DE42005CD225 /* DeleteFromBSTV4.swift */; };
+		47215C2C29E5DE62005CD225 /* DeleteFromBSTV4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47215C2B29E5DE62005CD225 /* DeleteFromBSTV4Tests.swift */; };
+		47215C2D29E5DE62005CD225 /* libDeleteFromBSTV4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47215C1B29E5DE42005CD225 /* libDeleteFromBSTV4.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		47215C2E29E5DE62005CD225 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 47215C1329E5DE42005CD225 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 47215C1A29E5DE42005CD225;
+			remoteInfo = DeleteFromBSTV4;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47215C1929E5DE42005CD225 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		47215C1B29E5DE42005CD225 /* libDeleteFromBSTV4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDeleteFromBSTV4.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		47215C1E29E5DE42005CD225 /* DeleteFromBSTV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBSTV4.swift; sourceTree = "<group>"; };
+		47215C2929E5DE62005CD225 /* DeleteFromBSTV4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeleteFromBSTV4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		47215C2B29E5DE62005CD225 /* DeleteFromBSTV4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBSTV4Tests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		47215C1829E5DE42005CD225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47215C2629E5DE62005CD225 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47215C2D29E5DE62005CD225 /* libDeleteFromBSTV4.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47215C1229E5DE42005CD225 = {
+			isa = PBXGroup;
+			children = (
+				47215C1D29E5DE42005CD225 /* DeleteFromBSTV4 */,
+				47215C2A29E5DE62005CD225 /* DeleteFromBSTV4Tests */,
+				47215C1C29E5DE42005CD225 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		47215C1C29E5DE42005CD225 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				47215C1B29E5DE42005CD225 /* libDeleteFromBSTV4.a */,
+				47215C2929E5DE62005CD225 /* DeleteFromBSTV4Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		47215C1D29E5DE42005CD225 /* DeleteFromBSTV4 */ = {
+			isa = PBXGroup;
+			children = (
+				47215C1E29E5DE42005CD225 /* DeleteFromBSTV4.swift */,
+			);
+			path = DeleteFromBSTV4;
+			sourceTree = "<group>";
+		};
+		47215C2A29E5DE62005CD225 /* DeleteFromBSTV4Tests */ = {
+			isa = PBXGroup;
+			children = (
+				47215C2B29E5DE62005CD225 /* DeleteFromBSTV4Tests.swift */,
+			);
+			path = DeleteFromBSTV4Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		47215C1A29E5DE42005CD225 /* DeleteFromBSTV4 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47215C2229E5DE42005CD225 /* Build configuration list for PBXNativeTarget "DeleteFromBSTV4" */;
+			buildPhases = (
+				47215C1729E5DE42005CD225 /* Sources */,
+				47215C1829E5DE42005CD225 /* Frameworks */,
+				47215C1929E5DE42005CD225 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeleteFromBSTV4;
+			productName = DeleteFromBSTV4;
+			productReference = 47215C1B29E5DE42005CD225 /* libDeleteFromBSTV4.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		47215C2829E5DE62005CD225 /* DeleteFromBSTV4Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 47215C3029E5DE62005CD225 /* Build configuration list for PBXNativeTarget "DeleteFromBSTV4Tests" */;
+			buildPhases = (
+				47215C2529E5DE62005CD225 /* Sources */,
+				47215C2629E5DE62005CD225 /* Frameworks */,
+				47215C2729E5DE62005CD225 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				47215C2F29E5DE62005CD225 /* PBXTargetDependency */,
+			);
+			name = DeleteFromBSTV4Tests;
+			productName = DeleteFromBSTV4Tests;
+			productReference = 47215C2929E5DE62005CD225 /* DeleteFromBSTV4Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		47215C1329E5DE42005CD225 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					47215C1A29E5DE42005CD225 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					47215C2829E5DE62005CD225 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 47215C1629E5DE42005CD225 /* Build configuration list for PBXProject "DeleteFromBSTV4" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 47215C1229E5DE42005CD225;
+			productRefGroup = 47215C1C29E5DE42005CD225 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				47215C1A29E5DE42005CD225 /* DeleteFromBSTV4 */,
+				47215C2829E5DE62005CD225 /* DeleteFromBSTV4Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		47215C2729E5DE62005CD225 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		47215C1729E5DE42005CD225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47215C1F29E5DE42005CD225 /* DeleteFromBSTV4.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47215C2529E5DE62005CD225 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47215C2C29E5DE62005CD225 /* DeleteFromBSTV4Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		47215C2F29E5DE62005CD225 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 47215C1A29E5DE42005CD225 /* DeleteFromBSTV4 */;
+			targetProxy = 47215C2E29E5DE62005CD225 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		47215C2029E5DE42005CD225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		47215C2129E5DE42005CD225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		47215C2329E5DE42005CD225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47215C2429E5DE42005CD225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		47215C3129E5DE62005CD225 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.DeleteFromBSTV4Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		47215C3229E5DE62005CD225 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 63HZLY9JEQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.beerbarrelpokerstudios.DeleteFromBSTV4Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		47215C1629E5DE42005CD225 /* Build configuration list for PBXProject "DeleteFromBSTV4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47215C2029E5DE42005CD225 /* Debug */,
+				47215C2129E5DE42005CD225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47215C2229E5DE42005CD225 /* Build configuration list for PBXNativeTarget "DeleteFromBSTV4" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47215C2329E5DE42005CD225 /* Debug */,
+				47215C2429E5DE42005CD225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		47215C3029E5DE62005CD225 /* Build configuration list for PBXNativeTarget "DeleteFromBSTV4Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47215C3129E5DE62005CD225 /* Debug */,
+				47215C3229E5DE62005CD225 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 47215C1329E5DE42005CD225 /* Project object */;
+}
