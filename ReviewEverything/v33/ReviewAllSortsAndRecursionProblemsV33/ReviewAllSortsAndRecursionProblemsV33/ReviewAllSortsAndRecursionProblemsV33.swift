@@ -997,7 +997,7 @@ func delete_from_bst(root: BinaryTreeNode?, values_to_be_deleted: [Int]) -> Bina
     
     // CASE 2
     var child: BinaryTreeNode? = nil
-    if nodeToDelete.left != nil && nodeToDelete == nil {
+    if nodeToDelete.left != nil && nodeToDelete.right == nil {
       child = nodeToDelete.left
     } else if nodeToDelete.left == nil && nodeToDelete.right != nil {
       child = nodeToDelete.right
